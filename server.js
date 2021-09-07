@@ -10,9 +10,11 @@ const app = express();
 
 // Config
 const PORT = 4000;
+app.set("view engine", "ejs");
 
 // Middleware
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(require("./utils/logger"));
 
