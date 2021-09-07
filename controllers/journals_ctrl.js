@@ -19,8 +19,17 @@ const newRoute = async function (req, res, next) {
         return next();
     }
 }
-//create
 
+//create
+const createRoute = async function (req, res, next) {
+    try {
+        return res.send(`Journal create route works!`);
+    } catch (error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+}
 
 //show
 const showRoute = async function (req, res, next) {
@@ -34,9 +43,6 @@ const showRoute = async function (req, res, next) {
 }
 
 
-
-
-
 //edit
 
 //update
@@ -47,4 +53,5 @@ module.exports = {
     indexRoute,
     showRoute,
     newRoute,
+    createRoute,
 }
