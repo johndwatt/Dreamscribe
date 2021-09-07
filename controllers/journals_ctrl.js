@@ -67,6 +67,15 @@ const updateRoute = async function (req, res, next) {
 
 
 //destroy
+const destroyRoute = async function (req, res, next) {
+    try {
+        return res.send(`Journal delete route works with id: ${req.params.id}`);
+    } catch (error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+}
 
 module.exports = {
     indexRoute,
@@ -75,4 +84,5 @@ module.exports = {
     createRoute,
     editRoute,
     updateRoute,
+    destroyRoute,
 }
