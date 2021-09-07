@@ -1,5 +1,6 @@
 // External Modules
 const express = require("express");
+const methodOverride = require("method-override");
 
 // Internal Modules
 
@@ -11,6 +12,8 @@ const app = express();
 const PORT = 4000;
 
 // Middleware
+app.use(express.static("public"));
+app.use(methodOverride("_method"));
 app.use(require("./utils/logger"));
 
 // Routes
