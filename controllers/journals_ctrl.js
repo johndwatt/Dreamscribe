@@ -44,8 +44,18 @@ const showRoute = async function (req, res, next) {
 
 
 //edit
+const editRoute = async function (req, res, next) {
+    try {
+        return res.send(`Journal edit route works with id: ${req.params.id}`);
+    } catch (error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+}
 
 //update
+
 
 //destroy
 
@@ -54,4 +64,5 @@ module.exports = {
     showRoute,
     newRoute,
     createRoute,
+    editRoute,
 }
