@@ -1,3 +1,3 @@
 module.exports = {
-    journals: require("./journals_ctrl"),
+    journals_ctrl: require("./journals_ctrl"),
 }

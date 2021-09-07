@@ -1,6 +1,7 @@
 // External Modules
 const express = require("express");
 const methodOverride = require("method-override");
+const routes = require("./routes");
 
 // Internal Modules
 
@@ -17,6 +18,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(require("./utils/logger"));
+
+app.use("/journals", routes.journals);
 
 // Routes
 
