@@ -11,6 +11,7 @@ const app = express();
 const PORT = 4000;
 
 // Middleware
+app.use(require("./utils/logger"));
 
 // Routes
 
