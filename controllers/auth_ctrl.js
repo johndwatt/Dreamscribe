@@ -21,6 +21,15 @@ const signupShow = async function (req, res, next) {
 }
 
 // login post
+const loginPost = async function (req, res, next) {
+    try {
+        return res.send("Auth login POST route works!");
+    } catch (error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+}
 
 // signup post
 
@@ -29,4 +38,5 @@ const signupShow = async function (req, res, next) {
 module.exports = {
     loginShow,
     signupShow,
+    loginPost,
 }
