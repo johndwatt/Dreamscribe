@@ -30,7 +30,9 @@ COMING SOON
 COMING SOON
 
 
-=== Development Roadmap ===
+=== DEVELOPMENT ROADMAP ===
+
+=== Sprints ===
 
 SPRINT 1: Set-up
 - Set up server
@@ -38,6 +40,11 @@ SPRINT 1: Set-up
 - Set up logger and other useful middleware
 - Outline journal entry routes + verify they work w/ res.send()
 - Outline user auth routes + verify functionality
+
+
+=== Stretch goals ===
+
+
 
 
 === PLANNING MATERIALS ===
