@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(require("./utils/logger"));
 
+app.use("/", routes.auth);
 app.use("/journals", routes.journals);
 
 // Routes
