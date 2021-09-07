@@ -1,5 +1,5 @@
-
-const index = async function (req, res, next) {
+//index
+const indexRoute = async function (req, res, next) {
     try {
         return res.send("Journal index route works!");
     } catch (error){
@@ -9,7 +9,21 @@ const index = async function (req, res, next) {
     }
 }
 
-const show = async function (req, res, next) {
+//new
+const newRoute = async function (req, res, next) {
+    try {
+        return res.send(`Journal new route works!`);
+    } catch (error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+}
+//create
+
+
+//show
+const showRoute = async function (req, res, next) {
     try {
         return res.send(`Journal show route works with id: ${req.params.id}`);
     } catch (error){
@@ -19,7 +33,18 @@ const show = async function (req, res, next) {
     }
 }
 
+
+
+
+
+//edit
+
+//update
+
+//destroy
+
 module.exports = {
-    index,
-    show,
+    indexRoute,
+    showRoute,
+    newRoute,
 }
