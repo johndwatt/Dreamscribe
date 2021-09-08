@@ -29,7 +29,7 @@ app.get("/", function (req, res, next) {
 });
 
 app.get("/*", function (req, res, next) {
-    res.send("404 route works");
+    res.render("404");
 });
 
 // Bind to PORT
