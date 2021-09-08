@@ -24,11 +24,11 @@ app.use("/", routes.info);
 app.use("/journals", routes.journals);
 
 // Routes
-app.get("/", function (req, res) {
+app.get("/", function (req, res, next) {
     res.redirect("/home");
 });
 
-app.get("/*", function (req, res) {
+app.get("/*", function (req, res, next) {
     res.send("404 route works");
 });
 
