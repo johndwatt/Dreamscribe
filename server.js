@@ -24,6 +24,9 @@ app.use("/", routes.info);
 app.use("/journals", routes.journals);
 
 // Routes
+app.get("/", function (req, res) {
+    res.redirect("/home");
+});
 
 // Bind to PORT
 app.listen(PORT, function(){
