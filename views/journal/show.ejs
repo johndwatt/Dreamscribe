@@ -10,15 +10,15 @@
     <main>
         <section>
             <div>
-                <h3>Journal Title</h3>
-                <p>Date created</p> 
+                <h3><%= journal.title %></h3>
+                <p><%= journal.createdAt %></p> 
             </div>
-            <p>Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil corrupti accusantium tenetur veritatis ratione explicabo exercitationem, voluptatem nulla enim dolorem, totam quas accusamus voluptatum placeat pariatur sapiente fuga similique? Deserunt.</p> 
+            <p><%= journal.content %></p> 
         </section>
         <section>
-            <a href="/journals/1/edit">Update Entry</a>
+            <a href="/journals/<%= journal.id %>/edit">Update Entry</a>
             <a href="#">Make Public</a>
-            <a href="#">Delete Entry</a>
+            <a href="/journals/<%= journal.id %>/delete">Delete Entry</a>
         </section>
     </main>
 </body>

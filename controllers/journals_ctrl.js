@@ -40,7 +40,11 @@ const createRoute = async function (req, res, next) {
 //show
 const showRoute = async function (req, res, next) {
     try {
-        return res.render("journal/show")
+        const foundJournal = await Journal.findById(req.params.id);
+        const context = {
+            journal: foundJournal,
+        };
+        return res.render("journal/show", context)
     } catch (error){
         console.log(error);
         req.error = error;
