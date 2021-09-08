@@ -15,21 +15,21 @@
                 <input 
                 type="text"
                 name="title"
-                value="#"
+                value="<%= journal.title %>"
                 required
                 />
                 <label>Content</label>
                 <textarea 
                 name="content"
-                required>#</textarea>
+                required><%= journal.content %></textarea>
                 <label>Make Dream Public</label>
                 <input 
                 type="checkbox"
                 name="isPublic"
-                value="#"
+                value="<%= journal.isPublic %>"
                 />
                 <button type="submit">Edit Journal Entry</button>
-                <a href="/journals">Cancel</a>
+                <a href="/journals/<%= journal.id %>">Cancel</a>
             </form>
         </section>
     </main>

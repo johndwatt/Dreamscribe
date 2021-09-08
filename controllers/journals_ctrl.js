@@ -29,11 +29,15 @@ const newRoute = async function (req, res, next) {
 //create
 const createRoute = async function (req, res, next) {
     try {
-        return res.send(`Journal create route works!`);
+        const createdJournal = await Journal.create(req.body);
+        return res.redirect(`/journals/${createdJournal.id}`)
     } catch (error){
         console.log(error);
         req.error = error;
-        return next();
+        const context = {
+            error,
+        }
+        return res.render ("journals/new", context);
     }
 }
 
@@ -56,7 +60,11 @@ const showRoute = async function (req, res, next) {
 //edit
 const editRoute = async function (req, res, next) {
     try {
-        return res.render("journal/edit");
+        const foundJournal = await Journal.findById(req.params.id);
+        const context = {
+            journal: foundJournal,
+        };
+        return res.render("journal/edit", context);
     } catch (error){
         console.log(error);
         req.error = error;
@@ -78,7 +86,11 @@ const updateRoute = async function (req, res, next) {
 //delete-confirmation
 const deleteShow = async function (req, res, next) {
     try {
-        return res.render("journal/delete-conf");
+        const foundJournal = await Journal.findById(req.params.id);
+        const context = {
+            journal: foundJournal,
+        };
+        return res.render("journal/delete-conf", context);
     } catch (error){
         console.log(error);
         req.error = error;
