@@ -1,9 +1,7 @@
 // Home
 const homeRoute = async function (req, res, next){
     try {
-        const context = {
-            
-        }
+        const context = {}
         return res.render("info/home", context);
     } catch (error) {
         console.log(error);
@@ -15,7 +13,8 @@ const homeRoute = async function (req, res, next){
 // About
 const aboutRoute = async function (req, res, next){
     try {
-        return res.send("About route works!");
+        const context = {}
+        return res.render("info/about", context);
     } catch (error) {
         console.log(error);
         req.error = error;
