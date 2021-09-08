@@ -1,3 +1,5 @@
+const { Journal } = require("../models")
+
 //index
 const indexRoute = async function (req, res, next) {
     try {
