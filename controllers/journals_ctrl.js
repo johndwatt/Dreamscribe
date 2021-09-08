@@ -65,6 +65,17 @@ const updateRoute = async function (req, res, next) {
     }
 }
 
+//delete-confirmation
+const deleteShow = async function (req, res, next) {
+    try {
+        return res.render("journal/delete-conf");
+    } catch (error){
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+}
+
 
 //destroy
 const destroyRoute = async function (req, res, next) {
@@ -84,5 +95,6 @@ module.exports = {
     createRoute,
     editRoute,
     updateRoute,
+    deleteShow,
     destroyRoute,
 }

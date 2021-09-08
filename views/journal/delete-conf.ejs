@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/_head') %>
+</head>
+<body>
+    <nav>
+        <%- include('../partials/_navbar') %>
+    </nav>
+    <main>
+        <section>
+            <h2>Are you sure your want to delete this journal entry?</h2>
+            <p>(This cannot be undone. Once your dream entry is deleted it is gone forever.)</p>
+            <form>
+                <button type="submit">Yes, delete it!</button>
+                <a href="/journals">Cancel</a>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
