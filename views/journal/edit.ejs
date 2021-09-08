@@ -7,6 +7,31 @@
     <nav>
         <%- include('../partials/_navbar') %>
     </nav>
-    
+    <main>
+        <section>
+            <h2>Edit Journal Entry</h2>
+            <form>
+                <label>Title</label>
+                <input 
+                type="text"
+                name="title"
+                value="#"
+                required
+                />
+                <label>Content</label>
+                <textarea 
+                name="content"
+                required>#</textarea>
+                <label>Make Dream Public</label>
+                <input 
+                type="checkbox"
+                name="isPublic"
+                value="#"
+                />
+                <button type="submit">Edit Journal Entry</button>
+                <a href="/journals">Cancel</a>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
