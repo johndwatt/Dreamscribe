@@ -1,7 +1,7 @@
 // Home
 const homeRoute = async function (req, res, next){
     try {
-        const context = {}
+        const context = {};
         return res.render("info/home", context);
     } catch (error) {
         console.log(error);
@@ -13,8 +13,19 @@ const homeRoute = async function (req, res, next){
 // About
 const aboutRoute = async function (req, res, next){
     try {
-        const context = {}
+        const context = {};
         return res.render("info/about", context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+}
+
+const profileRoute = async function (req, res, next){
+    try {
+        const context = {};
+        return res.send("profile route works");
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -25,4 +36,5 @@ const aboutRoute = async function (req, res, next){
 module.exports = {
     homeRoute,
     aboutRoute,
+    profileRoute,
 }
