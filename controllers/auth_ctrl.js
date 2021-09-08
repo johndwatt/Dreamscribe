@@ -1,7 +1,7 @@
 // login show
 const loginShow = async function (req, res, next) {
     try {
-        return res.send("Auth login show route works!");
+        return res.render("auth/login");
     } catch (error){
         console.log(error);
         req.error = error;
@@ -12,7 +12,7 @@ const loginShow = async function (req, res, next) {
 // signup show
 const signupShow = async function (req, res, next) {
     try {
-        return res.send("Auth signup show route works!");
+        return res.render("auth/signup");
     } catch (error){
         console.log(error);
         req.error = error;

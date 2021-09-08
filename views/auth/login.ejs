@@ -7,6 +7,29 @@
     <nav>
         <%- include('../partials/_navbar') %>
     </nav>
+    <main>
+        <section>
+            <h2>Login to Dreamscribe</h2>
+            <form>
+                <label>Username</label>
+                <input 
+                type="text"
+                name="username"
+                placeholder="Your Username"
+                required
+                />
+                <label>Password</label>
+                <input 
+                type="password"
+                name="password"
+                placeholder="************"
+                required
+                />
+                <button type="submit">Log In</button>
+                <a href="/signup">Need an account? Click here!</a>
+            </form>
+        </section>
+    </main>
     
 </body>
 </html>
