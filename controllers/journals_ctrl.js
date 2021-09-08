@@ -34,7 +34,7 @@ const createRoute = async function (req, res, next) {
 //show
 const showRoute = async function (req, res, next) {
     try {
-        return res.send(`Journal show route works with id: ${req.params.id}`);
+        return res.render("journal/show")
     } catch (error){
         console.log(error);
         req.error = error;
