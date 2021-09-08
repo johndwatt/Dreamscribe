@@ -3,7 +3,11 @@ const { Journal } = require("../models")
 //index
 const indexRoute = async function (req, res, next) {
     try {
-        return res.render("journal/index")
+        const publicJournals = await Journal.find({ isPublic: true });
+        const context = {
+            journals: publicJournals,
+        };
+        return res.render("journal/index", context)
     } catch (error){
         console.log(error);
         req.error = error;
