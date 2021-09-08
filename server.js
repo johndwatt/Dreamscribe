@@ -20,6 +20,7 @@ app.use(methodOverride("_method"));
 app.use(require("./utils/logger"));
 
 app.use("/", routes.auth);
+app.use("/", routes.info);
 app.use("/journals", routes.journals);
 
 // Routes
