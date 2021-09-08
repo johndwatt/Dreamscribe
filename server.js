@@ -28,6 +28,10 @@ app.get("/", function (req, res) {
     res.redirect("/home");
 });
 
+app.get("/*", function (req, res) {
+    res.send("404 route works");
+});
+
 // Bind to PORT
 app.listen(PORT, function(){
     console.log(`Server is live on port ${PORT}!` )
