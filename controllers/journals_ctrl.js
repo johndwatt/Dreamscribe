@@ -1,7 +1,7 @@
 //index
 const indexRoute = async function (req, res, next) {
     try {
-        return res.send("Journal index route works!");
+        return res.render("journal/index")
     } catch (error){
         console.log(error);
         req.error = error;
