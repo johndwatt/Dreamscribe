@@ -12,7 +12,7 @@ const indexRoute = async function (req, res, next) {
 //new
 const newRoute = async function (req, res, next) {
     try {
-        return res.send(`Journal new route works!`);
+        return res.render("journal/new");
     } catch (error){
         console.log(error);
         req.error = error;
