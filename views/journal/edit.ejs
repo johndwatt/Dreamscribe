@@ -22,12 +22,27 @@
                 <textarea 
                 name="content"
                 required><%= journal.content %></textarea>
-                <label>Make Dream Public</label>
+                <label>Make Dream Public:</label>
                 <input 
-                type="checkbox"
+                type="radio"
                 name="isPublic"
-                value="<%= journal.isPublic %>"
+                value="true"
+                id="radio-yes"
+                <% if ( journal.isPublic === true ) { %>
+                    checked
+                <% } %>
                 />
+                <label for="radio-yes">Yes</label>
+                <input 
+                type="radio"
+                name="isPublic"
+                value="false"
+                id="radio-no"
+                <% if ( journal.isPublic === false ) { %>
+                    checked
+                <% } %>
+                />
+                <label for="radio-no">No</label>
                 <button type="submit">Edit Journal Entry</button>
                 <a href="/journals/<%= journal.id %>">Cancel</a>
             </form>

@@ -14,24 +14,34 @@
                 <% if (typeof error !== "undefined") { %>
                     <%= error.message %> 
                 <% } %> 
-                <label>Title</label>
+                <label>Title:</label>
                 <input 
                 type="text"
                 name="title"
                 placeholder="Title of Entry"
                 required
                 />
-                <label>Content</label>
+                <label>Content:</label>
                 <textarea 
                 name="content"
                 placeholder="Dream content here"
                 required></textarea>
-                <label>Make Dream Public</label>
+                <label>Make Dream Public:</label>
                 <input 
-                type="checkbox"
+                type="radio"
+                name="isPublic"
+                value="true"
+                id="radio-yes"
+                />
+                <label for="radio-yes">Yes</label>
+                <input 
+                type="radio"
                 name="isPublic"
                 value="false"
+                id="radio-no"
+                checked
                 />
+                <label for="radio-no">No</label>
                 <button type="submit">Create Journal Entry</button>
                 <a href="/journals">Cancel</a>
             </form>

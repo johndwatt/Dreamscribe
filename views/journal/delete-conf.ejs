@@ -17,7 +17,7 @@
                 </div>
             </section>
             <p>(This cannot be undone. Once your dream entry is deleted it is gone forever.)</p>
-            <form>
+            <form action="/journals/<%= journal.id %>?_method=DELETE" method="POST">
                 <button type="submit">Yes, delete it!</button>
                 <a href="/journals/<%= journal.id %>">Cancel</a>
             </form>

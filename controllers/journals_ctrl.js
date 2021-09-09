@@ -63,6 +63,7 @@ const editRoute = async function (req, res, next) {
         const foundJournal = await Journal.findById(req.params.id);
         const context = {
             journal: foundJournal,
+            publicValue: foundJournal.isPublic,
         };
         return res.render("journal/edit", context);
     } catch (error){
@@ -107,7 +108,8 @@ const deleteShow = async function (req, res, next) {
 //destroy
 const destroyRoute = async function (req, res, next) {
     try {
-        return res.send(`Journal delete route works with id: ${req.params.id}`);
+        await Journal.findByIdAndDelete(req.params.id);
+        return res.redirect("/journals");
     } catch (error){
         console.log(error);
         req.error = error;
