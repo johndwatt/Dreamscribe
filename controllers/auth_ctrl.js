@@ -1,3 +1,6 @@
+
+const { User } = require("../models");
+
 // login show
 const loginShow = async function (req, res, next) {
     try {
