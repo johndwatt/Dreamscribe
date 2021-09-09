@@ -11,6 +11,12 @@
         <section>
             <h2>Login to Dreamscribe</h2>
             <form>
+                <% if (typeof error !== "undefined") { %>
+                    <%= error.message %> 
+                <% } %> 
+                <% if (typeof userExistsMsg !== "undefined") { %>
+                    <%= userExistsMsg %> 
+                <% } %> 
                 <label>Username</label>
                 <input 
                 type="text"

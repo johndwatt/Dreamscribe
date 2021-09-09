@@ -10,7 +10,10 @@
     <main>
         <section>
             <h2>Create an Account</h2>
-            <form>
+            <form action="/signup" method="POST">
+                <% if (typeof error !== "undefined") { %>
+                    <%= error.message %> 
+                <% } %> 
                 <label>Username</label>
                 <input 
                 type="text"

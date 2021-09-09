@@ -54,5 +54,5 @@ app.get("/*", function (req, res, next) {
 
 // Bind to PORT
 app.listen(PORT, function(){
-    console.log(`Server is live on port ${PORT}!` )
+    console.log(`Server is live on port ${PORT}!`);
 });
