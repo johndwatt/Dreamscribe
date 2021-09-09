@@ -18,6 +18,10 @@ const journalSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        userId: {
+            type: mongoose.Types.ObjectId,
+            ref: "User",
+        },
     },
     {
         timestamps: true,

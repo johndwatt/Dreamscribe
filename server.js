@@ -39,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(require("./utils/logger"));
 
-const authRequired = (req,res,next) => {
+const authRequired = (req, res, next) => {
     if(!req.session.currentUser){
       return res.redirect("/login");
     }
