@@ -42,11 +42,9 @@ const loginPost = async function (req, res, next) {
         };
         req.session.currentUser = {
             id: foundUser._id,
-            name: foundUser.username,
+            username: foundUser.username,
         };
-        console.log("2 currentUser:", req.session.currentUser);
-        return res.redirect(`/profile`);
-        /* return res.redirect(`/profile/${currentUser._id}`); */
+        return res.redirect(`/profile/${foundUser._id}`);
     } catch (error){
         console.log(error);
         req.error = error;
@@ -74,7 +72,7 @@ const signupPost = async function (req, res, next) {
             id: createdUser._id,
             username: createdUser.username,
         };
-        return res.redirect("/profile");
+        return res.redirect(`/profile/${createdUser._id}`);
     } catch (error){
         console.log(error);
         req.error = error;
@@ -85,7 +83,9 @@ const signupPost = async function (req, res, next) {
 // logout
 const logoutRoute = async function (req, res, next) {
     try {
+        console.log("before", req.session);
         await req.session.destroy();
+        console.log("after", req.session);
         return res.redirect("/login");
     } catch (error){
         console.log(error);

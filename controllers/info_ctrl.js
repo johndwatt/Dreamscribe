@@ -22,19 +22,7 @@ const aboutRoute = async function (req, res, next){
     }
 }
 
-const profileRoute = async function (req, res, next){
-    try {
-        const context = {};
-        return res.render("info/profile", context);
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-}
-
 module.exports = {
     homeRoute,
     aboutRoute,
-    profileRoute,
 }

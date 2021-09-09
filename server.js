@@ -41,6 +41,7 @@ app.use(require("./utils/logger"));
 
 app.use("/", routes.auth);
 app.use("/", routes.info);
+app.use("/", routes.profile);
 app.use("/journals", routes.journals);
 
 // Routes
