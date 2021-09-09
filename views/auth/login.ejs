@@ -10,12 +10,9 @@
     <main>
         <section>
             <h2>Login to Dreamscribe</h2>
-            <form>
+            <form action="/login" method="POST">
                 <% if (typeof error !== "undefined") { %>
                     <%= error.message %> 
-                <% } %> 
-                <% if (typeof userExistsMsg !== "undefined") { %>
-                    <%= userExistsMsg %> 
                 <% } %> 
                 <label>Username</label>
                 <input 

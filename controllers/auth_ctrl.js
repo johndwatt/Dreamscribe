@@ -26,7 +26,27 @@ const signupShow = async function (req, res, next) {
 // login post
 const loginPost = async function (req, res, next) {
     try {
-        return res.send("Auth login POST route works!");
+        const foundUser = await User.findOne({ username: req.body.username });
+        if (!foundUser) {
+            error = {
+                message: "An account with this username or email does not exist. Please create an account."
+            }
+            return res.render("auth/signup", error);
+        };
+        const match = await bcrypt.compare(req.body.password, foundUser.password);
+        if (!match) {
+            error = {
+                message: "Incorrect email or password. Please try again."
+            }
+            return res.render("auth/login", error)
+        };
+        req.session.currentUser = {
+            id: foundUser._id,
+            name: foundUser.username,
+        };
+        console.log("2 currentUser:", req.session.currentUser);
+        return res.redirect(`/profile`);
+        /* return res.redirect(`/profile/${currentUser._id}`); */
     } catch (error){
         console.log(error);
         req.error = error;
@@ -41,10 +61,10 @@ const signupPost = async function (req, res, next) {
             $or: [{ email: req.body.email }, { username: req.body.username }], 
         });
         if (foundUser) {
-            context = {
-                userExistsMsg: "An account with this username or email already exists. Please log in instead."
+            error = {
+                message: "An account with this username or email already exists. Please log in instead."
             }
-            return res.render("auth/login", context);
+            return res.render("auth/login", error);
         };
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(req.body.password, salt);
