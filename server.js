@@ -39,10 +39,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(require("./utils/logger"));
 
+const authRequired = (req,res,next) => {
+    if(!req.session.currentUser){
+      return res.redirect("/login");
+    }
+    next();
+}
+
 app.use("/", routes.auth);
 app.use("/", routes.info);
-app.use("/", routes.profile);
-app.use("/journals", routes.journals);
+app.use("/", authRequired, routes.profile);
+app.use("/journals", authRequired, routes.journals);
 
 // Routes
 app.get("/", function (req, res, next) {
