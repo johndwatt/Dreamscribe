@@ -65,7 +65,8 @@ const signupPost = async function (req, res, next) {
 // logout
 const logoutRoute = async function (req, res, next) {
     try {
-        return res.send("Auth logout route works!");
+        await req.session.destroy();
+        return res.redirect("/login");
     } catch (error){
         console.log(error);
         req.error = error;
