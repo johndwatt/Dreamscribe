@@ -68,11 +68,14 @@ const signupPost = async function (req, res, next) {
         const hash = await bcrypt.hash(req.body.password, salt);
         req.body.password = hash;
         const createdUser = await User.create(req.body);
+        const newUser = await User.findById({ 
+            _id: createdUser._id
+        });
         req.session.currentUser = {
-            id: createdUser._id,
-            username: createdUser.username,
+            id: newUser._id,
+            username: newUser.username,
         };
-        return res.redirect(`/profile/${createdUser._id}`);
+        return res.redirect(`/profile/${newUser._id}`);
     } catch (error){
         console.log(error);
         req.error = error;
@@ -83,9 +86,7 @@ const signupPost = async function (req, res, next) {
 // logout
 const logoutRoute = async function (req, res, next) {
     try {
-        console.log("before", req.session);
         await req.session.destroy();
-        console.log("after", req.session);
         return res.redirect("/login");
     } catch (error){
         console.log(error);

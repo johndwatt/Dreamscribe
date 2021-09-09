@@ -11,8 +11,11 @@
         <section>
             <h3>Profile</h3>
             <img src="#" alt="#">
-            <p><%= user.username %></p>
-            <p><%= user.joinDate %></p>
+            <p><%= thisUser.username %></p>
+            <p><%= thisUser.joinDate %></p>
+            <% if (user.id === thisUser.id) { %> 
+                <a href="/home"><button>Update profile</button></a>
+            <% } %> 
         </section>
         <section>
             <div>

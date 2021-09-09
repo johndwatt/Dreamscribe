@@ -4,7 +4,7 @@ const profileRoute = async function (req, res, next){
     try {
         const foundUser = await User.findById({ _id: req.params.id });
         const context = {
-            user: foundUser,
+            thisUser: foundUser,
         };
         return res.render("user/profile", context);
     } catch (error) {
