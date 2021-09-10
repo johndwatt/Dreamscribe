@@ -1,3 +1,50 @@
+@use "../variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: aquamarine;
+    color: $font-color;
+    background-color: $background-color;
+}
+
+article {
+    background-color: $item-color;
+}
+
+a {
+    text-decoration: none;
+    color: $font-color;
+    &:hover {
+        color: $hover-color;
+    }
+}
+
+.navbar {
+    background-color: $item-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    .navbar__logo:hover  {
+        color: $hover-color;
+    }
+    .navbar__list {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+    }
+    .navbar__list__item {
+        padding: 10px; 
+        border: solid 2px $font-color;
+        border-radius: 15px;
+        margin: 0px 5px;
+        &:hover {
+            color: $hover-color;
+            border-color: $hover-color;
+        }
+    }
 }

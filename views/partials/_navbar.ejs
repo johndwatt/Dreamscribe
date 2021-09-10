@@ -1,13 +1,15 @@
-<h1><a href="/home">Dreamscribe</a></h1>
-<ul>
-    <% if (typeof user !== "undefined") { %> 
-        <li><a href="/about">About</a></li>
-        <li><a href="/journals">Journal Feed</a></li>
-        <li><a href="/profile/<%= user.id %>">My Profile</a></li>
-        <li><a href="/logout">Logout</a></li>
-    <% } else { %> 
-        <li><a href="/about">About</a></li>
-        <li><a href="/signup">Signup</a></li>
-        <li><a href="/login">Login</a></li>
-    <% } %> 
-</ul>
+<nav class="navbar">
+    <h1 class="navbar__logo"><a href="/home">Dreamscribe</a></h1>
+    <ul class="navbar__list">
+        <% if (typeof user !== "undefined") { %> 
+            <li><a href="/about" class="navbar__list__item">About</a></li>
+            <li><a href="/journals" class="navbar__list__item">Journal Feed</a></li>
+            <li><a href="/profile/<%= user.id %>" class="navbar__list__item">My Profile</a></li>
+            <li><a href="/logout" class="navbar__list__item">Logout</a></li>
+        <% } else { %> 
+            <li><a href="/about" class="navbar__list__item">About</a></li>
+            <li><a href="/signup" class="navbar__list__item">Signup</a></li>
+            <li><a href="/login" class="navbar__list__item">Login</a></li>
+        <% } %> 
+    </ul>
+</nav>
