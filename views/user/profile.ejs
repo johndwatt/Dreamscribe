@@ -31,6 +31,30 @@
      <main>
         <section>
             <h3>Journal Entries</h3>
+            <% for(let i = 0; i < userJournals.length; i++){ %> 
+                <% const journal = userJournals[i] %>
+                <% if (user.id === thisUser.id && journal.isPublic === false) { %> 
+                    <a href='/journals/<%= journal.id %>'>
+                        <div>
+                            <h5><%= journal.title %></h5>
+                            <p><%= journal.createdAt %></p>
+                        </div>
+                        <p><%= journal.content %></p>
+                        <p>Status: Private</p>
+                    </a>
+                <% } else if (journal.isPublic === true) { %>
+                    <a href='/journals/<%= journal.id %>'>
+                        <div>
+                            <h5><%= journal.title %></h5>
+                            <p><%= journal.createdAt %></p>
+                        </div>
+                        <p><%= journal.content %></p>
+                        <p>Status: Public</p>
+                    </a>
+                <% } %>
+            <% } %> 
+            
+            <h4>Private</h4>
             <div>
                 <a href="/journals/1">
                     <div>
@@ -39,12 +63,15 @@
                     </div>
                     <p>Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil corrupti accusantium tenetur veritatis ratione explicabo exercitationem, voluptatem nulla enim dolorem, totam quas accusamus voluptatum placeat pariatur sapiente fuga similique? Deserunt.</p>
                 </a>
-                <a href="/journals/2">
+            </div> 
+            <h4>Public</h4>
+            <div>
+                <a href="/journals/1">
                     <div>
                         <h5>Title</h5>
                         <p>Date created</p>
                     </div>
-                    <p>Content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, perferendis quia dolorum ea vero, impedit ratione quidem explicabo nisi ullam laboriosam temporibus quis facere iusto officiis aspernatur beatae iste? Consectetur.</p>
+                    <p>Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil corrupti accusantium tenetur veritatis ratione explicabo exercitationem, voluptatem nulla enim dolorem, totam quas accusamus voluptatum placeat pariatur sapiente fuga similique? Deserunt.</p>
                 </a>
             </div>
         </section>
