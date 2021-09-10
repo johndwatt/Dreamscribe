@@ -29,6 +29,7 @@ const newRoute = async function (req, res, next) {
 //create
 const createRoute = async function (req, res, next) {
     try {
+        req.body.userId = req.session.currentUser.id;
         const createdJournal = await Journal.create(req.body);
         return res.redirect(`/journals/${createdJournal.id}`)
     } catch (error){
@@ -37,7 +38,7 @@ const createRoute = async function (req, res, next) {
         const context = {
             error,
         }
-        return res.render ("journals/new", context);
+        return res.render ("journal/new", context);
     }
 }
 
