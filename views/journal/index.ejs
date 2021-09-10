@@ -20,19 +20,21 @@
             </div>
         </section>
      </header>
-     <section>
-        <div>
+     <main>
             <% for(let i = 0; i < journals.length; i++){ %> 
             <% const journal = journals[i] %>
-            <a href='/journals/<%= journal.id %>'>
+            <article>
+                <h4><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
                 <div>
-                    <h5><%= journal.title %></h5>
+                    <p><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
                     <p><%= journal.createdAt %></p>
                 </div>
-                <p><%= journal.content %></p>
-            </a>
+                <div>
+                    <p><%= journal.content %></p>
+                </div>
+            </article>
             <% } %>
-        </div>
-    </section>
+        
+    </main>
 </body>
 </html>

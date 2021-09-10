@@ -3,7 +3,7 @@ const { Journal } = require("../models")
 //index
 const indexRoute = async function (req, res, next) {
     try {
-        const publicJournals = await Journal.find({ isPublic: true });
+        const publicJournals = await Journal.find({ isPublic: true }).populate('userId');
         const context = {
             journals: publicJournals,
         };
@@ -45,7 +45,7 @@ const createRoute = async function (req, res, next) {
 //show
 const showRoute = async function (req, res, next) {
     try {
-        const foundJournal = await Journal.findById(req.params.id);
+        const foundJournal = await Journal.findById(req.params.id).populate('userId');
         const context = {
             journal: foundJournal,
         };

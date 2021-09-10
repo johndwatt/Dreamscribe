@@ -8,21 +8,23 @@
         <%- include('../partials/_navbar') %>
     </nav>
     <main>
-        <section>
+        <article>
+            <h3><%= journal.title %></h3>
             <div>
-                <h3><%= journal.title %></h3>
+                <a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a>
                 <p><%= journal.createdAt %></p> 
             </div>
-            <p><%= journal.content %></p> 
-        </section>
-        <% if (user.id == journal.userId) { %> 
+            <div>
+                <p><%= journal.content %></p>
+            </div>
+        </article>
+        <% if (user.id == journal.userId.id) { %> 
             <section>
                 <a href="/journals/<%= journal.id %>/edit">Update Entry</a>
                 <a href="#">Make Public</a>
                 <a href="/journals/<%= journal.id %>/delete">Delete Entry</a>
             </section>
         <% } %> 
-        
     </main>
 </body>
 </html>

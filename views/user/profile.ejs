@@ -34,23 +34,29 @@
             <% for(let i = 0; i < userJournals.length; i++){ %> 
                 <% const journal = userJournals[i] %>
                 <% if (user.id === thisUser.id && journal.isPublic === false) { %> 
-                    <a href='/journals/<%= journal.id %>'>
+                    <article>
+                        <h4><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
                         <div>
-                            <h5><%= journal.title %></h5>
+                            <p><%= thisUser.username %></p>
                             <p><%= journal.createdAt %></p>
                         </div>
-                        <p><%= journal.content %></p>
+                        <div>
+                            <p><%= journal.content %></p>
+                        </div>
                         <p>Status: Private</p>
-                    </a>
+                    </article>
                 <% } else if (journal.isPublic === true) { %>
-                    <a href='/journals/<%= journal.id %>'>
+                    <article>
+                        <h4><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
                         <div>
-                            <h5><%= journal.title %></h5>
+                            <p><%= thisUser.username %></p>
                             <p><%= journal.createdAt %></p>
                         </div>
-                        <p><%= journal.content %></p>
+                        <div>
+                            <p><%= journal.content %></p>
+                        </div>
                         <p>Status: Public</p>
-                    </a>
+                    </article>
                 <% } %>
             <% } %> 
         </section>
