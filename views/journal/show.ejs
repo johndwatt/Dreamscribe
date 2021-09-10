@@ -15,11 +15,14 @@
             </div>
             <p><%= journal.content %></p> 
         </section>
-        <section>
-            <a href="/journals/<%= journal.id %>/edit">Update Entry</a>
-            <a href="#">Make Public</a>
-            <a href="/journals/<%= journal.id %>/delete">Delete Entry</a>
-        </section>
+        <% if (user.id == journal.userId) { %> 
+            <section>
+                <a href="/journals/<%= journal.id %>/edit">Update Entry</a>
+                <a href="#">Make Public</a>
+                <a href="/journals/<%= journal.id %>/delete">Delete Entry</a>
+            </section>
+        <% } %> 
+        
     </main>
 </body>
 </html>
