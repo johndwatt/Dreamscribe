@@ -66,6 +66,15 @@ a {
     }
 }
 
+.image {
+    overflow: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0 auto;
+}
+
 .input {
     padding: 5px;
     margin-top: 3px;
@@ -128,6 +137,11 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    box-shadow: 0 4px 8px 0 $shadow-rgba;
+    transition: 0.2s;
+    &:hover{
+        box-shadow: 0 8px 16px 0 $shadow-rgba;
+    }
     .navbar__logo {
         font-family: $logo-font;
     }
