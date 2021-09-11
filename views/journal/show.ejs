@@ -6,21 +6,23 @@
 <body>
         <%- include('../partials/_navbar') %>
     <main>
-        <article>
-            <h3><%= journal.title %></h3>
-            <div>
-                <a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a>
-                <p><%= journal.createdAt %></p> 
-            </div>
-            <div>
-                <p><%= journal.content %></p>
+        <article class="journal">
+            <h3 class="journal__title"><%= journal.title %></h3>
+            <div class="journal__flex">
+                <div class="journal__flex__user">
+                    <a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a>
+                    <p><%= journal.createdAt %></p> 
+                </div>
+                <div class="journal__flex__content">
+                    <p><%= journal.content %></p>
+                </div>
             </div>
         </article>
         <% if (user.id == journal.userId.id) { %> 
             <section>
-                <a href="/journals/<%= journal.id %>/edit">Update Entry</a>
-                <a href="#">Make Public</a>
-                <a href="/journals/<%= journal.id %>/delete">Delete Entry</a>
+                <a href="/journals/<%= journal.id %>/edit" class="button">Update Entry</a>
+                <a href="#" class="button">Make Public</a>
+                <a href="/journals/<%= journal.id %>/delete" class="button">Delete Entry</a>
             </section>
         <% } %> 
     </main>

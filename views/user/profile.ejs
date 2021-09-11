@@ -6,7 +6,7 @@
 <body>
         <%- include('../partials/_navbar') %>
     <header>
-        <section>
+        <section class="section">
             <h3>Profile</h3>
             <img src="#" alt="#">
             <p><%= thisUser.username %></p>
@@ -15,45 +15,49 @@
                 <a href="/home"><button>Update profile</button></a>
             <% } %> 
         </section>
-        <section>
-            <div>
+        <section class="section">
+            <h3>Journal Entries</h3>
+            <div class="section__flex">
                 <label for="">Search Entries</label>
                 <input /> 
-                <button type="submit">Search</button>
+                <button type="submit" class="button">Search</button>
             </div>
             <div>
-                <a href="/journals/new">New Journal Entry</a>
+                <a href="/journals/new" class="button">New Journal Entry</a>
             </div>
         </section>
      </header>
      <main>
         <section>
-            <h3>Journal Entries</h3>
             <% for(let i = 0; i < userJournals.length; i++){ %> 
                 <% const journal = userJournals[i] %>
                 <% if (user.id === thisUser.id && journal.isPublic === false) { %> 
-                    <article>
-                        <h4><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
-                        <div>
-                            <p><%= thisUser.username %></p>
-                            <p><%= journal.createdAt %></p>
+                    <article class="journal">
+                        <h4><a href='/journals/<%= journal.id %>' class="journal__title"><%= journal.title %></a></h4>
+                        <div class="journal__flex">
+                            <div class="journal__flex__user">
+                                <p><%= thisUser.username %></p>
+                                <p><%= journal.createdAt %></p>
+                                <p>Status: Private</p>
+                            </div>
+                            <div class="journal__flex__content">
+                                <p><%= journal.content %></p>
+                            </div>
                         </div>
-                        <div>
-                            <p><%= journal.content %></p>
-                        </div>
-                        <p>Status: Private</p>
                     </article>
                 <% } else if (journal.isPublic === true) { %>
-                    <article>
-                        <h4><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
-                        <div>
-                            <p><%= thisUser.username %></p>
-                            <p><%= journal.createdAt %></p>
+                    <article class="journal">
+                        <h4><a href='/journals/<%= journal.id %>' class="journal__title"><%= journal.title %></a></h4>
+                        <div class="journal__flex">
+                            <div class="journal__flex__user">
+                                <p><%= thisUser.username %></p>
+                                <p><%= journal.createdAt %></p>
+                                <p>Status: Public</p>
+                            </div>
+                            <div class="journal__flex__content">
+                                <p><%= journal.content %></p>
+                            </div>
                         </div>
-                        <div>
-                            <p><%= journal.content %></p>
-                        </div>
-                        <p>Status: Public</p>
                     </article>
                 <% } %>
             <% } %> 
