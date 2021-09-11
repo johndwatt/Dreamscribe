@@ -1,34 +1,116 @@
+/* $hover-color: #FFED24;
+$font-color: #DBC65E;
+
+$font-color: #F7D219;
+$hover-color: #FFED24;
+
+$hover-color: #9895CC;
+$font-color: #CBE7FA; 
+
+$item-color: #140F75;
+
+$item-color: #484C6B;
+$background-color: #403C8C;
+
+$item-color: #132F64;
+$hover-color: #dac97fdd;
+$font-color: #fcf070;
+$background-color: #071022;
+
+283B8F
+
+132F64
+
+#33364D*/
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  color: #CBE7FA;
-  background-color: #403C8C;
-}
-
-article {
-  background-color: #140F75;
+  color: #F1EEFF;
+  background-color: #071022;
 }
 
 a {
   text-decoration: none;
-  color: #CBE7FA;
+  color: #F1EEFF;
 }
 a:hover {
-  color: #9895CC;
+  color: #F1EEFF;
+}
+
+.button {
+  padding: 10px;
+  border: solid 2px #F1EEFF;
+  border-radius: 15px;
+  margin: 0px 5px;
+  background-color: #132F64;
+  color: #F1EEFF;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+.button:hover {
+  color: #132F64;
+  border-color: #132F64;
+  background-color: #F1EEFF;
+}
+
+.section {
+  background-color: #132F64;
+  padding: 25px;
+  margin: 25px 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(241, 238, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+.section .section__flex {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+}
+.section:hover {
+  box-shadow: 0 8px 16px 0 rgba(241, 238, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.journal {
+  background-color: #132F64;
+  padding: 25px;
+  margin: 25px 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(241, 238, 255, 0.2);
+  transition: 0.2s;
+}
+.journal .journal__flex {
+  display: flex;
+  flex-direction: column;
+}
+.journal .journal__title {
+  padding: 5px 0px;
+}
+.journal .journal__flex__user {
+  padding: 5px 0px;
+}
+.journal .journal__flex__content {
+  padding: 5px 0px;
+}
+.journal:hover {
+  box-shadow: 0 8px 16px 0 rgba(241, 238, 255, 0.2);
+  transform: scale(1.02);
 }
 
 .navbar {
-  background-color: #140F75;
+  background-color: #132F64;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
 }
 .navbar .navbar__logo:hover {
-  color: #9895CC;
+  color: #F1EEFF;
 }
 .navbar .navbar__list {
   display: flex;
@@ -37,13 +119,16 @@ a:hover {
 }
 .navbar .navbar__list__item {
   padding: 10px;
-  border: solid 2px #CBE7FA;
+  border: solid 2px #F1EEFF;
   border-radius: 15px;
   margin: 0px 5px;
+  transition: 0.2s;
+  white-space: nowrap;
 }
 .navbar .navbar__list__item:hover {
-  color: #9895CC;
-  border-color: #9895CC;
+  color: #132F64;
+  border-color: #132F64;
+  background-color: #F1EEFF;
 }
 
 /*# sourceMappingURL=main.css.map */

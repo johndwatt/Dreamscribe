@@ -8,10 +8,7 @@
 body {
     color: $font-color;
     background-color: $background-color;
-}
 
-article {
-    background-color: $item-color;
 }
 
 a {
@@ -22,13 +19,75 @@ a {
     }
 }
 
+.button {
+    padding: 10px; 
+    border: solid 2px $font-color;
+    border-radius: 15px;
+    margin: 0px 5px;
+    background-color: $item-color;
+    color: $font-color;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.2s;
+    &:hover {
+        color: $item-color;
+        border-color: $item-color;
+        background-color: $hover-color;
+    }
+}
+
+.section {
+    background-color: $item-color;
+    padding: 25px;
+    margin: 25px 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 $shadow-rgba;
+    display: flex;
+    flex-direction: column;
+    .section__flex {
+        display: flex;
+        padding: 15px;
+        align-items: center;
+    }
+    &:hover {
+        box-shadow: 0 8px 16px 0 $shadow-rgba;
+        transform: scale(1.02);
+    }
+
+}
+
+.journal {
+    background-color: $item-color;
+    padding: 25px;
+    margin: 25px 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 $shadow-rgba;
+    transition: 0.2s;
+    .journal__flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .journal__title {
+        padding: 5px 0px;
+    }
+    .journal__flex__user {
+        padding: 5px 0px;
+    }
+    .journal__flex__content {
+        padding: 5px 0px;
+    }
+    &:hover {
+        box-shadow: 0 8px 16px 0 $shadow-rgba;
+        transform: scale(1.02);
+    }
+}
+
 .navbar {
     background-color: $item-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-
     .navbar__logo:hover  {
         color: $hover-color;
     }
@@ -42,9 +101,12 @@ a {
         border: solid 2px $font-color;
         border-radius: 15px;
         margin: 0px 5px;
+        transition: 0.2s;
+        white-space: nowrap;
         &:hover {
-            color: $hover-color;
-            border-color: $hover-color;
+            color: $item-color;
+            border-color: $item-color;
+            background-color: $hover-color;
         }
     }
 }

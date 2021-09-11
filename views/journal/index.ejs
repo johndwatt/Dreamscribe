@@ -5,32 +5,34 @@
 </head>
 <body>
         <%- include('../partials/_navbar') %>
-    <header>
+    <header class="section">
         <h3>Public Journal Entries</h3>
-        <section>
+        <section class="section__flex">
             <div>
-                <label for="">Search Entries</label>
-                <input /> 
-                <button type="submit">Search</button>
+                <label for="search">Search Entries</label>
+                <input name="search" /> 
+                <button type="submit" class="button">Search</button>
             </div>
             <div>
-                <a href="/journals/new">New Journal Entry</a>
+                <a href="/journals/new" class="button">New Journal Entry</a>
             </div>
         </section>
      </header>
      <main>
             <% for(let i = 0; i < journals.length; i++){ %> 
             <% const journal = journals[i] %>
-            <article>
-                <h4><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
-                <div>
-                    <p><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
-                    <p><%= journal.createdAt %></p>
-                </div>
-                <div>
-                    <p><%= journal.content %></p>
-                </div>
-            </article>
+                <article class="journal">
+                    <h4 class="journal__title"><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
+                    <div class="journal__flex">
+                        <div class="journal__flex__user">
+                            <p><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
+                            <p><%= journal.createdAt %></p>
+                        </div>
+                        <div class="journal__flex__content">
+                            <p><%= journal.content %></p>
+                        </div>
+                    </div>
+                </article>
             <% } %>
         
     </main>
