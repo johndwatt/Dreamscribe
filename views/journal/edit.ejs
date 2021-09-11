@@ -8,41 +8,59 @@
     <main>
         <section class="section">
             <h2>Edit Journal Entry</h2>
-            <form action="/journals/<%= journal.id %>?_method=PUT" method="POST">
-                <label>Title</label>
-                <input 
-                type="text"
-                name="title"
-                value="<%= journal.title %>"
-                required
-                />
-                <label>Content</label>
-                <textarea 
-                name="content"
-                required><%= journal.content %></textarea>
-                <label>Make Dream Public:</label>
-                <input 
-                type="radio"
-                name="isPublic"
-                value="true"
-                id="radio-yes"
-                <% if ( journal.isPublic === true ) { %>
-                    checked
+            <form action="/journals/<%= journal.id %>?_method=PUT" method="POST" class="form">
+                <% if (typeof error !== "undefined") { %>
+                    <p class="form__error"><%= error.message %></p> 
                 <% } %>
-                />
-                <label for="radio-yes">Yes</label>
-                <input 
-                type="radio"
-                name="isPublic"
-                value="false"
-                id="radio-no"
-                <% if ( journal.isPublic === false ) { %>
-                    checked
-                <% } %>
-                />
-                <label for="radio-no">No</label>
-                <button type="submit">Edit Journal Entry</button>
-                <a href="/journals/<%= journal.id %>">Cancel</a>
+                <div class="form__field">
+                    <label>Title</label>
+                    <input
+                    class="input" 
+                    type="text"
+                    name="title"
+                    value="<%= journal.title %>"
+                    required
+                    />
+                </div>
+                <div class="form__field">
+                    <label>Content</label>
+                    <textarea
+                    rows="20"
+                    class="input"  
+                    name="content"
+                    required><%= journal.content %></textarea>
+                </div>
+                <div class="form__field">
+                    <label>Make Dream Public:</label>
+                    <div>
+                        <input 
+                        type="radio"
+                        name="isPublic"
+                        value="true"
+                        id="radio-yes"
+                        <% if ( journal.isPublic === true ) { %>
+                            checked
+                        <% } %>
+                        />
+                        <label for="radio-yes">Yes</label>
+                        <input 
+                        type="radio"
+                        name="isPublic"
+                        value="false"
+                        id="radio-no"
+                        <% if ( journal.isPublic === false ) { %>
+                            checked
+                        <% } %>
+                        />
+                        <label for="radio-no">No</label>
+                    </div>
+                    
+                </div>
+                <div class="form__field">
+                    <button type="submit" class="button">Edit Journal Entry</button>
+                    <a class="button" href="/journals/<%= journal.id %>">Cancel</a>
+                </div>
+                
             </form>
         </section>
     </main>
