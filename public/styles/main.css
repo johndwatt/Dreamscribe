@@ -1,4 +1,15 @@
-/* $hover-color: #FFED24;
+/* 
+current color scheme:
+$item-color: #132F64;
+$background-color: #071022;
+$hover-color: #F1EEFF;
+$font-color: #F1EEFF;
+$shadow-rgba: rgba(241, 238, 255, 0.2);
+
+saved, but not used
+
+
+$hover-color: #FFED24;
 $font-color: #DBC65E;
 
 $font-color: #F7D219;
@@ -37,7 +48,7 @@ a {
   color: #F1EEFF;
 }
 a:hover {
-  color: #F1EEFF;
+  color: #BFC1D9;
 }
 
 .button {
@@ -54,7 +65,44 @@ a:hover {
 .button:hover {
   color: #132F64;
   border-color: #132F64;
+  background-color: #BFC1D9;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+.form .form__error {
+  border: 5px solid #FF7B7B;
+  color: #FF7B7B;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+.form .form__error:hover {
+  color: #132F64;
+  background-color: #FF7B7B;
+  border-color: #132F64;
+  transition: 0.2s;
+}
+.form .form__field {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+.input {
+  padding: 5px;
+  margin-top: 3px;
   background-color: #F1EEFF;
+  border-color: #BFC1D9;
+  border-radius: 8px;
+}
+.input:hover {
+  transform: scale(1.01);
+  transition: 0.2s;
 }
 
 .section {
@@ -109,7 +157,7 @@ a:hover {
   padding: 15px;
 }
 .navbar .navbar__logo:hover {
-  color: #F1EEFF;
+  color: #BFC1D9;
 }
 .navbar .navbar__list {
   display: flex;
@@ -127,7 +175,7 @@ a:hover {
 .navbar .navbar__list__item:hover {
   color: #132F64;
   border-color: #132F64;
-  background-color: #F1EEFF;
+  background-color: #BFC1D9;
 }
 
 /*# sourceMappingURL=main.css.map */

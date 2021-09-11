@@ -36,6 +36,43 @@ a {
     }
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    .form__error {
+        border: 5px solid $danger-color;
+        color: $danger-color;
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 15px;
+        font-weight: bold;
+        &:hover {
+            color: $item-color;
+            background-color: $danger-color;
+            border-color: $item-color;
+            transition: 0.2s;
+        }
+    }
+    .form__field {
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+    }
+}
+
+.input {
+    padding: 5px;
+    margin-top: 3px;
+    background-color: $font-color;
+    border-color: $hover-color;
+    border-radius: 8px;
+    &:hover {
+        transform: scale(1.01);
+        transition: 0.2s;
+    }
+}
+
 .section {
     background-color: $item-color;
     padding: 25px;
@@ -52,7 +89,6 @@ a {
     &:hover {
         box-shadow: 0 8px 16px 0 $shadow-rgba;
     }
-
 }
 
 .journal {
