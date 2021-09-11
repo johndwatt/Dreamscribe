@@ -41,6 +41,11 @@ $background-color: #071022;
 body {
   color: #F1EEFF;
   background-color: #071022;
+  font-family: "IBM Plex Sans", "Verdana", sans-serif;
+}
+
+p {
+  font-family: "IBM Plex Serif", "Times New Roman", serif;
 }
 
 a {
@@ -61,6 +66,7 @@ a:hover {
   cursor: pointer;
   white-space: nowrap;
   transition: 0.2s;
+  font-family: "IBM Plex Sans", "Verdana", sans-serif;
 }
 .button:hover {
   color: #132F64;
@@ -155,6 +161,9 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+}
+.navbar .navbar__logo {
+  font-family: "Josefin Sans", "Helvetica", sans-serif;
 }
 .navbar .navbar__logo:hover {
   color: #BFC1D9;
