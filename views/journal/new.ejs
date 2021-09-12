@@ -6,7 +6,7 @@
 </head>
 <body>
         <%- include('../partials/_navbar') %>
-    <main>
+    <main class="form__flex">
         <section class="section">
             <h2>Create New Journal Entry</h2>
             <form action="/journals" method="POST" class="form">
@@ -53,8 +53,8 @@
                     </div>
                 </div> 
                 <div class="form__field">
-                    <button class="button" type="submit">Create Journal Entry</button>
-                    <a href="/journals" class="button">Cancel</a>
+                    <button class="button success__button" type="submit">Create Journal Entry</button>
+                    <a href="/journals" class="button cancel__button">Cancel</a>
                 </div> 
             </form>
         </section>
