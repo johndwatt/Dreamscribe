@@ -101,10 +101,6 @@ a:hover {
 
 .image {
   overflow: hidden;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   margin: 0 auto;
 }
 

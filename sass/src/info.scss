@@ -1,0 +1,60 @@
+@use "../variables" as *;
+
+/* Home Page */
+.image__container--small {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    border: 3px solid $font-color;
+    border-radius: 50px;
+    &:hover {
+        border-color: $hover-color;
+    }
+}
+
+#home__top {
+    max-height: 300px;
+    min-height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+#home__top__img {
+    width: 100%;
+    min-height: 200px;
+}
+
+#welcome {
+    max-width: 500px;
+    text-align: center;
+}
+
+#welcome__heading {
+    margin: 15px;
+    h1 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+}
+
+#welcome__links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h4 {
+        margin-top: 10px;
+    }
+    .welcome__links__section {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+}
+
+/* About Page */
+
