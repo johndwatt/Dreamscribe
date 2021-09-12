@@ -57,4 +57,26 @@
 }
 
 /* About Page */
+.about__heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
+#about__links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    & > a {
+        padding: 10px;
+    }
+}
+
+#about__ul {
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    & > a {
+        padding: 10px;
+    }
+}

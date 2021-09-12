@@ -90,5 +90,28 @@ $background-color: #071022;
 }
 
 /* About Page */
+.about__heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#about__links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+#about__links > a {
+  padding: 10px;
+}
+
+#about__ul {
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+#about__ul > a {
+  padding: 10px;
+}
 
 /*# sourceMappingURL=info.css.map */
