@@ -33,5 +33,16 @@ $background-color: #071022;
 132F64
 
 #33364D*/
+/* ALL */
+.form__section {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.form__flex {
+  display: flex;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=forms.css.map */

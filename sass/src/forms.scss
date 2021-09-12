@@ -1,2 +1,14 @@
 @use "../variables" as *;
 
+/* ALL */
+
+.form__section {
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.form__flex {
+    display: flex;
+    justify-content: center;
+}

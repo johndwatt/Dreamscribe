@@ -6,8 +6,8 @@
 </head>
 <body>
         <%- include('../partials/_navbar') %>
-    <main>
-        <section class="section">
+    <main class="form__flex">
+        <section class="section form__section">
             <h2>Login to Dreamscribe</h2>
             <form action="/login" method="POST" class="form">
                 <% if (typeof error !== "undefined") { %>
@@ -37,7 +37,7 @@
                     <button type="submit" class="button">Log In</button>
                 </div>
                 <div class="form__field">
-                    <a href="/signup">Need an account? Click here!</a>
+                    <a href="/signup">Need to create an account? Click here!</a>
                 </div>
                 
             </form>
