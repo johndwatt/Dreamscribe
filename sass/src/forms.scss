@@ -16,7 +16,7 @@
 /* Journal forms */
 
 .cancel__button{
-    margin-top: 10px;
+    margin-top: 12px;
     border-color: $danger-color;
     color: $danger-color;
     text-align: center;
@@ -36,4 +36,9 @@
         border-color: $item-color;
         background-color: $success-color;
     }
+}
+
+/* Delete Comfirmation */
+#delete-journal {
+    margin: 12px 0px;
 }

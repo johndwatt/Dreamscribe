@@ -47,7 +47,7 @@ $background-color: #071022;
 
 /* Journal forms */
 .cancel__button {
-  margin-top: 10px;
+  margin-top: 12px;
   border-color: #FF7B7B;
   color: #FF7B7B;
   text-align: center;
@@ -67,6 +67,11 @@ $background-color: #071022;
   color: #132F64;
   border-color: #132F64;
   background-color: #a1ff9fdd;
+}
+
+/* Delete Comfirmation */
+#delete-journal {
+  margin: 12px 0px;
 }
 
 /*# sourceMappingURL=forms.css.map */
