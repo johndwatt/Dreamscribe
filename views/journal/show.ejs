@@ -11,7 +11,7 @@
             <h3 class="journal__title"><%= journal.title %></h3>
             <div class="journal__flex">
                 <div class="journal__flex__user">
-                    <a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a>
+                    <p class="space"><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
                     <p><%= journal.createdAt %></p> 
                 </div>
                 <div class="journal__flex__content">

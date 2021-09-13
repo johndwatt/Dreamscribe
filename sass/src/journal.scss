@@ -34,8 +34,10 @@
     }
 }
 
-.journal__flex__user .space {
-    margin-bottom: 10px;
+.journal__flex__user {
+    .space {
+        margin-bottom: 10px;
+    }
 }
 
 .search {

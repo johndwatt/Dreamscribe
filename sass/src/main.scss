@@ -129,9 +129,6 @@ a {
 
 .navbar {
     background-color: $item-color;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 15px;
     box-shadow: 0 4px 8px 0 $shadow-rgba;
     transition: 0.2s;
@@ -143,6 +140,54 @@ a {
     }
     .navbar__logo:hover {
         color: $hover-color;
+    }
+    .navbar__list {
+        list-style-type: none;
+        min-width: 160px;
+        padding: 12px 16px;
+        z-index: 1;
+        transition: 0.2s;
+    }
+    .navbar__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar__list__item {
+        margin: 15px 0px;
+    }
+    .navbar__list__link {
+        padding: 10px; 
+        margin: 0px 5px;
+        transition: 0.2s;
+        white-space: nowrap;
+        border: solid 2px $font-color;
+        border-radius: 15px;
+        display: block;
+        text-align: center;
+        &:hover {
+            color: $item-color;
+            border-color: $item-color;
+            background-color: $hover-color;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* 
+.navbar {
+    background-color: $item-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 $shadow-rgba;
+    transition: 0.2s;
+    &:hover{
+        box-shadow: 0 8px 16px 0 $shadow-rgba;
     }
     .navbar__list {
         display: flex;
@@ -162,4 +207,4 @@ a {
             background-color: $hover-color;
         }
     }
-}
+*/
