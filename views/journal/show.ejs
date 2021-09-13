@@ -12,7 +12,7 @@
             <div class="journal__flex">
                 <div class="journal__flex__user">
                     <p class="space"><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
-                    <p><%= journal.createdAt %></p> 
+                    <p><%= journal.createdAt.toLocaleDateString() %> at <%= journal.createdAt.toLocaleTimeString() %></p> 
                 </div>
                 <div class="journal__flex__content">
                     <p><%= journal.content %></p>

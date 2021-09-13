@@ -13,7 +13,7 @@
                 <img class="image" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
             </div>
             <p class="username"><%= thisUser.username %></p>
-            <p><%= thisUser.joinDate %></p>
+            <p>Join Date: <%= thisUser.joinDate.toLocaleDateString() %> %></p>
             <% if (user.id === thisUser.id) { %> 
                 <a href="/home"><button class="button">Update profile</button></a>
             <% } %> 
@@ -43,7 +43,7 @@
                         <div class="journal__flex">
                             <div class="journal__flex__user">
                                 <p class="space"><%= thisUser.username %></p>
-                                <p class="space"><%= journal.createdAt %></p>
+                                <p class="space"><%= journal.createdAt.toLocaleDateString() %> at <%= journal.createdAt.toLocaleTimeString() %></p>
                                 <p>Status: Private</p>
                             </div>
                             <div class="journal__flex__content">
@@ -57,7 +57,7 @@
                         <div class="journal__flex">
                             <div class="journal__flex__user">
                                 <p class="space"><%= thisUser.username %></p>
-                                <p class="space"><%= journal.createdAt %></p>
+                                <p class="space"><%= journal.createdAt.toLocaleDateString() %> at <%= journal.createdAt.toLocaleTimeString() %></p>
                                 <p>Status: Public</p>
                             </div>
                             <div class="journal__flex__content">
