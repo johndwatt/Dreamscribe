@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
     <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/journal.css" />
 </head>
 <body>
         <%- include('../partials/_navbar') %>
-    <header class="section">
+    <header class="section index__header">
         <h3>Public Journal Entries</h3>
-        <section class="section__flex">
-            <div>
-                <label for="search">Search Entries</label>
-                <input name="search" class="input"/> 
-                <button type="submit" class="button">Search</button>
+        <div class="section__flex">
+            <div class="search">
+                <div>
+                    <input name="search" class="input"/>
+                    <button type="submit" class="button">Search</button>
+                </div>
             </div>
-            <div>
-                <a href="/journals/new" class="button">New Journal Entry</a>
-            </div>
-        </section>
+        </div>
+        <div class="new__button">
+            <a href="/journals/new" class="button">New Journal Entry</a>
+        </div>
      </header>
      <main>
             <% for(let i = 0; i < journals.length; i++){ %> 

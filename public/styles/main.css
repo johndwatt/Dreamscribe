@@ -127,7 +127,7 @@ a:hover {
 }
 .section .section__flex {
   display: flex;
-  padding: 15px;
+  /*  padding: 15px; */
   align-items: center;
 }
 .section:hover {

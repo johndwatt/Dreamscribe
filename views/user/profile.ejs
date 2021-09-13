@@ -2,27 +2,33 @@
 <html lang="en">
 <head>
     <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/journal.css" />
 </head>
 <body>
         <%- include('../partials/_navbar') %>
     <header>
-        <section class="section">
+        <section class="section profile__section">
             <h3>Profile</h3>
-            <img src="#" alt="#">
-            <p><%= thisUser.username %></p>
+            <div>
+                <img class="image" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
+            </div>
+            <p class="username"><%= thisUser.username %></p>
             <p><%= thisUser.joinDate %></p>
             <% if (user.id === thisUser.id) { %> 
-                <a href="/home"><button>Update profile</button></a>
+                <a href="/home"><button class="button">Update profile</button></a>
             <% } %> 
         </section>
         <section class="section">
             <h3>Journal Entries</h3>
             <div class="section__flex">
-                <label for="">Search Entries</label>
-                <input name="search" class="input"/> 
-                <button type="submit" class="button">Search</button>
+                <div class="search">
+                    <div>
+                        <input name="search" class="input"/>
+                        <button type="submit" class="button">Search</button>
+                    </div>
+                </div>
             </div>
-            <div>
+            <div class="new__button">
                 <a href="/journals/new" class="button">New Journal Entry</a>
             </div>
         </section>

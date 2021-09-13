@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/journal.css" />
 </head>
 <body>
         <%- include('../partials/_navbar') %>
@@ -19,10 +20,9 @@
             </div>
         </article>
         <% if (user.id == journal.userId.id) { %> 
-            <section>
-                <a href="/journals/<%= journal.id %>/edit" class="button">Update Entry</a>
-                <a href="#" class="button">Make Public</a>
-                <a href="/journals/<%= journal.id %>/delete" class="button">Delete Entry</a>
+            <section class="btns__flex">
+                <a href="/journals/<%= journal.id %>/edit" class="button">Update</a>
+                <a href="/journals/<%= journal.id %>/delete" class="button delete__button">Delete</a>
             </section>
         <% } %> 
     </main>
