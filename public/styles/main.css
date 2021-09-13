@@ -206,6 +206,24 @@ a:hover {
   background-color: #BFC1D9;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #132F64;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F1EEFF;
+  border-radius: 15px;
+  border: 2px solid #BFC1D9;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFC1D9;
+  border: 2px solid #F1EEFF;
+}
+
 .hidden {
   display: none;
 }

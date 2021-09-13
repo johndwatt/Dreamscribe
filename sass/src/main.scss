@@ -173,6 +173,24 @@ a {
     }
 }
 
+
+::-webkit-scrollbar {
+    width: 12px;    
+  }
+  ::-webkit-scrollbar-track {
+    background: $item-color;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $font-color;
+    border-radius: 15px;
+    border: 2px solid $hover-color;
+    &:hover {
+        background: $hover-color;
+        border: 2px solid $font-color;
+    }
+  }
+ 
+
 .hidden {
     display: none;
 }
