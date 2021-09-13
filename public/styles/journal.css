@@ -33,13 +33,6 @@ $background-color: #071022;
 132F64
 
 #33364D*/
-/* index */
-.index__header h3 {
-  margin-bottom: 12px;
-  font-size: 28px;
-  text-align: left;
-}
-
 /* profile */
 .profile__section {
   text-align: center;
@@ -84,6 +77,13 @@ $background-color: #071022;
 
 .new__button {
   margin-top: 20px;
+}
+
+/* index */
+.index__header h3 {
+  margin-bottom: 12px;
+  font-size: 28px;
+  text-align: left;
 }
 
 /* show */

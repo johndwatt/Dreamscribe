@@ -1,14 +1,5 @@
 @use "../variables" as *;
 
-/* index */
-.index__header {
-    h3 {
-        margin-bottom: 12px;
-        font-size: 28px;
-        text-align: left;
-    }
-}
-
 /* profile */
 .profile__section {
     text-align: center;
@@ -53,6 +44,15 @@
 
 .new__button {
     margin-top: 20px;
+}
+
+/* index */
+.index__header {
+    h3 {
+        margin-bottom: 12px;
+        font-size: 28px;
+        text-align: left;
+    }
 }
 
 /* show */
