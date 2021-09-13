@@ -27,7 +27,7 @@
                     <h4 class="journal__title"><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
                     <div class="journal__flex">
                         <div class="journal__flex__user">
-                            <p><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
+                            <p class="space"><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
                             <p><%= journal.createdAt %></p>
                         </div>
                         <div class="journal__flex__content">

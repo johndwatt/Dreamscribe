@@ -67,6 +67,10 @@ $background-color: #071022;
   padding: 5px;
 }
 
+.journal__flex__user .space {
+  margin-bottom: 10px;
+}
+
 .search {
   display: flex;
   flex-direction: column;
