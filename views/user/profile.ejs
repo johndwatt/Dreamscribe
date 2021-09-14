@@ -24,15 +24,17 @@
                 <div class="flex__elements">
                     <div class="section__flex">
                         <div class="search">
-                            <form>
+                            <form class="search__flex">
                                 <input name="search" class="input" type="search" placeholder="Search" />
-                                <button type="submit" class="button">Search</button>
-                                <a class="button" href="/profile/<%= thisUser.id %> ">Reset</a>
+                                <div class="search__buttons">
+                                    <button type="submit" class="button">Search</button>
+                                    <a class="button" href="/profile/<%= thisUser.id %>" >Reset</a>
+                                </div>
                             </form>
                         </div>
                     </div>
                     <div class="new__button">
-                        <a href="/journals/new" class="button">New Journal Entry</a>
+                        <a href="/journals/new" class="button space-top">New Journal Entry</a>
                     </div>
                 </div>
                 

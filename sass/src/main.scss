@@ -210,6 +210,11 @@ a {
 
 article#show__journal {
     max-height: 800px;
+}    
+
+.search__buttons {
+    display: flex;
+    margin-top: 10px;
 }
 
 @media only screen and (min-width: 480px){
@@ -227,13 +232,11 @@ article#show__journal {
     .index__header {
         width: 420px;
     }
-    .flex__elements {
+    .search__flex {
         display: flex;
         align-items: center;
     }
-    div.new__button {
-        margin-top: 0px;
-    }
+
 }
 
 @media only screen and (min-width: 768px){
@@ -282,8 +285,15 @@ article#show__journal {
         display: flex;
         justify-content: space-between;
     }
+    .flex__elements {
+        display: flex;
+        align-items: center;
+    }
     div.flex__elements {
         justify-content: space-between;
+    }
+    div.new__button {
+        margin-top: 0px;
     }
 }
 
