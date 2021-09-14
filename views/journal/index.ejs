@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/journal.css" />
+</head>
+<body>
+        <%- include('../partials/_navbar') %>
+    <div class="center__elements">
+        <header class="section index__header">
+            <h3>Public Journal Entries</h3>
+            <div class="flex__elements">
+                <div class="section__flex">
+                    <div class="search">
+                        <div>
+                            <input name="search" class="input"/>
+                            <button type="submit" class="button">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="new__button">
+                    <a href="/journals/new" class="button">New Journal Entry</a>
+                </div>
+            </div>
+            
+        </header>
+        <main class="journal__grid">
+                <% for(let i = 0; i < journals.length; i++){ %> 
+                <% const journal = journals[i] %>
+                    <article class="journal">
+                        <h4 class="journal__title"><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
+                        <div class="journal__flex">
+                            <div class="journal__flex__user">
+                                <img class="image journal__user__img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
+                                <p class="space"><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
+                            </div>
+                            <div class="journal__flex__content">
+                                <p><%= journal.content %></p>
+                            </div>
+                        </div>
+                        <hr class="space-top"/>
+                        <p class="space-top">Posted: <%= journal.createdAt.toLocaleDateString() %> at <%= journal.createdAt.toLocaleTimeString() %></p> 
+                    </article>
+                <% } %>
+        </main>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/forms.css">
+</head>
+<body>
+        <%- include('../partials/_navbar') %>
+    <main class="form__flex">
+        <section class="section form__section">
+            <h2>Login to Dreamscribe</h2>
+            <form action="/login" method="POST" class="form">
+                <% if (typeof error !== "undefined") { %>
+                    <p class="form__error"><%= error.message %></p>
+                <% } %>
+                <div class="form__field">
+                    <label>Username</label>
+                    <input
+                    class="input"  
+                    type="text"
+                    name="username"
+                    placeholder="Your Username"
+                    required
+                    />
+                </div>
+                <div class="form__field">
+                    <label>Password</label>
+                    <input
+                    class="input" 
+                    type="password"
+                    name="password"
+                    placeholder="************"
+                    required
+                    />
+                </div>
+                <div class="form__field">
+                    <button type="submit" class="button">Log In</button>
+                </div>
+                <div class="form__field">
+                    <a href="/signup">Need to create an account? Click here!</a>
+                </div>
+                
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>
