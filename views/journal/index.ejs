@@ -12,10 +12,10 @@
             <div class="flex__elements">
                 <div class="section__flex">
                     <div class="search">
-                        <div>
-                            <input name="search" class="input"/>
+                        <form>
+                            <input name="search" class="input" type="search" placeholder="Search" />
                             <button type="submit" class="button">Search</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <div class="new__button">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <hr class="space-top"/>
-                        <p class="space-top">Posted: <%= journal.createdAt.toLocaleDateString() %> at <%= journal.createdAt.toLocaleTimeString() %></p> 
+                        <p class="space-top">Posted: <%= journal.createdAt %></p> 
                     </article>
                 <% } %>
         </main>
