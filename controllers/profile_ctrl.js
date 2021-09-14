@@ -3,7 +3,7 @@ const { User, Journal } = require("../models");
 const profileRoute = async function (req, res, next){
     try {
         const foundUser = await User.findById({ _id: req.params.id });
-        const userJournals = await Journal.find({ userId: foundUser.id });
+        const userJournals = await Journal.find({ userId: foundUser.id }).sort('-createdAt');
         const context = {
             thisUser: foundUser,
             userJournals: userJournals,

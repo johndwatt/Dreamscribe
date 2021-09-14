@@ -3,7 +3,7 @@ const { Journal } = require("../models")
 //index
 const indexRoute = async function (req, res, next) {
     try {
-        const publicJournals = await Journal.find({ isPublic: true }).populate('userId');
+        const publicJournals = await Journal.find({ isPublic: true }).populate('userId').sort('-createdAt');
         const context = {
             journals: publicJournals,
         };
