@@ -1,0 +1,44 @@
+@use "../variables" as *;
+
+/* Auth forms */
+
+.form__section {
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.form__flex {
+    display: flex;
+    justify-content: center;
+}
+
+/* Journal forms */
+
+.cancel__button{
+    margin-top: 12px;
+    border-color: $danger-color;
+    color: $danger-color;
+    text-align: center;
+    font-size: 14px;
+    &:hover {
+        color: $item-color;
+        border-color: $item-color;
+        background-color: $danger-color;
+    }
+}
+
+.success__button{
+    border-color: $success-color;
+    color: $success-color;
+    &:hover {
+        color: $item-color;
+        border-color: $item-color;
+        background-color: $success-color;
+    }
+}
+
+/* Delete Comfirmation */
+#delete-journal {
+    margin: 12px 0px;
+}

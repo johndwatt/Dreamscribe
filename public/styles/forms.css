@@ -1,0 +1,77 @@
+/* 
+current color scheme:
+$item-color: #132F64;
+$background-color: #071022;
+$hover-color: #F1EEFF;
+$font-color: #F1EEFF;
+$shadow-rgba: rgba(241, 238, 255, 0.2);
+
+saved, but not used
+
+
+$hover-color: #FFED24;
+$font-color: #DBC65E;
+
+$font-color: #F7D219;
+$hover-color: #FFED24;
+
+$hover-color: #9895CC;
+$font-color: #CBE7FA; 
+
+$item-color: #140F75;
+
+$item-color: #484C6B;
+$background-color: #403C8C;
+
+$item-color: #132F64;
+$hover-color: #dac97fdd;
+$font-color: #fcf070;
+$background-color: #071022;
+
+283B8F
+
+132F64
+
+#33364D*/
+/* Auth forms */
+.form__section {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.form__flex {
+  display: flex;
+  justify-content: center;
+}
+
+/* Journal forms */
+.cancel__button {
+  margin-top: 12px;
+  border-color: #FF7B7B;
+  color: #FF7B7B;
+  text-align: center;
+  font-size: 14px;
+}
+.cancel__button:hover {
+  color: #132F64;
+  border-color: #132F64;
+  background-color: #FF7B7B;
+}
+
+.success__button {
+  border-color: #a1ff9fdd;
+  color: #a1ff9fdd;
+}
+.success__button:hover {
+  color: #132F64;
+  border-color: #132F64;
+  background-color: #a1ff9fdd;
+}
+
+/* Delete Comfirmation */
+#delete-journal {
+  margin: 12px 0px;
+}
+
+/*# sourceMappingURL=forms.css.map */

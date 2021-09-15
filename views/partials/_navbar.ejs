@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="navbar__flex"> 
+        <h1 class="navbar__logo"><a href="/home">Dreamscribe</a></h1>
+        <button class="button" id="menu">Menu</button>
+    </div>
+    <ul class="navbar__list hidden" id="navbar__dropdown">
+        <% if (typeof user !== "undefined") { %> 
+            <li class="navbar__list__item"><a href="/about" class="navbar__list__link">About</a></li>
+            <li class="navbar__list__item"><a href="/journals" class="navbar__list__link">Journal Feed</a></li>
+            <li class="navbar__list__item"><a href="/profile/<%= user.id %>" class="navbar__list__link">My Profile</a></li>
+            <li class="navbar__list__item"><a href="/logout" class="navbar__list__link">Logout</a></li>
+        <% } else { %> 
+            <li class="navbar__list__item"><a href="/about" class="navbar__list__link">About</a></li>
+            <li class="navbar__list__item"><a href="/signup" class="navbar__list__link">Signup</a></li>
+            <li class="navbar__list__item"><a href="/login" class="navbar__list__link">Login</a></li>
+        <% } %> 
+    </ul>
+</nav>

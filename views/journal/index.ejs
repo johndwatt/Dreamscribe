@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/journal.css" />
+</head>
+<body>
+        <%- include('../partials/_navbar') %>
+    <div class="center__elements">
+        <header class="section index__header">
+            <h3>Public Journal Entries</h3>
+            <div class="flex__elements">
+                <div class="section__flex">
+                    <div class="search">
+                        <form class="search__flex">
+                            <input name="search" class="input" type="search" placeholder="Search" />
+                            <div class="search__buttons">
+                                <button type="submit" class="button">Search</button>
+                                <a class="button" href="/journals/" >Reset</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="new__button">
+                    <a href="/journals/new" class="button space-top">New Journal Entry</a>
+                </div>
+            </div>
+            
+        </header>
+        <main class="journal__grid">
+                <% for(let i = 0; i < journals.length; i++){ %> 
+                <% const journal = journals[i] %>
+                <a href='/journals/<%= journal.id %>'>
+                    <article class="journal">
+                        <h4 class="journal__title"><%= journal.title %></h4>
+                        <div class="journal__flex">
+                            <div class="journal__flex__user">
+                                <img class="image journal__user__img" src="<%= journal.userId.avatar %>" alt="profile-photo">
+                                <p class="space"><%= journal.userId.username %></p>
+                            </div>
+                            <div class="journal__flex__content">
+                                <p><%= journal.content %></p>
+                            </div>
+                        </div>
+                        <hr class="space-top"/>
+                        <p class="space-top">Posted: <%= journal.createdAt.toLocaleString() %></p> 
+                    </article>
+                </a>
+                <% } %>
+        </main>
+    </div>
+
+    
+</body>
+</html>

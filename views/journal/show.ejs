@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/styles/journal.css" />
+</head>
+<body>
+        <%- include('../partials/_navbar') %>
+    <main class="center__elements">
+        <article class="journal" id="show__journal">
+            <h3 class="journal__title"><%= journal.title %></h3>
+            <div class="journal__flex">
+                <div class="journal__flex__user">
+                    <img class="image journal__user__img" src="<%= journal.userId.avatar %>" alt="profile-photo">
+                    <p class="space"><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p> 
+                </div>
+                <div class="journal__flex__content">
+                    <p><%= journal.content %></p>
+                </div>
+            </div>
+            <hr class="space-top"/>
+            <p class="space-top"><%= journal.createdAt.toLocaleDateString() %> at <%= journal.createdAt.toLocaleTimeString() %></p> 
+        </article>
+        <% if (user.id == journal.userId.id) { %> 
+            <section class="btns__flex">
+                <a href="/journals/<%= journal.id %>/edit" class="button">Update</a>
+                <a href="/journals/<%= journal.id %>/delete" class="button delete__button">Delete</a>
+            </section>
+        <% } %> 
+    </main>
+</body>
+</html>
