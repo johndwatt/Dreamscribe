@@ -86,6 +86,10 @@ const showRoute = async function (req, res, next) {
 const editRoute = async function (req, res, next) {
     try {
         const foundJournal = await Journal.findById(req.params.id);
+        if (req.session.currentUser.id != foundJournal.userId._id) {
+            return res.redirect("/journals/you-are-not-authorized-to-edit-that-but-nice-try");
+        }
+        
         const context = {
             journal: foundJournal,
             publicValue: foundJournal.isPublic,

@@ -27,25 +27,26 @@ const signupShow = async function (req, res, next) {
 const loginPost = async function (req, res, next) {
     try {
         const foundUser = await User.findOne({ username: req.body.username });
-        if (!foundUser) {
-            error = {
-                message: "An account with this username or email does not exist. Please create an account."
-            }
-            return res.render("auth/signup", error);
-        };
+        if (!foundUser) { throw "noUser" };
         const match = await bcrypt.compare(req.body.password, foundUser.password);
-        if (!match) {
-            error = {
-                message: "Incorrect email or password. Please try again."
-            }
-            return res.render("auth/login", error)
-        };
+        if (!match) { throw "noMatch" };
         req.session.currentUser = {
             id: foundUser._id,
             username: foundUser.username,
         };
         return res.redirect(`/profile/${foundUser._id}`);
     } catch (error){
+        if (error === "noUser") {
+            const error = {
+                message: "An account with this username or email does not exist. Please create an account."
+            }
+            return res.render("auth/signup", {error});
+        } else if (error === "noMatch"){
+            const error = {
+                message: "Incorrect email or password. Please try again."
+            }
+            return res.render("auth/login", {error});
+        }
         console.log(error);
         req.error = error;
         return next();
@@ -58,12 +59,7 @@ const signupPost = async function (req, res, next) {
         const foundUser = await User.exists({ 
             $or: [{ email: req.body.email }, { username: req.body.username }], 
         });
-        if (foundUser) {
-            error = {
-                message: "An account with this username or email already exists. Please log in instead."
-            }
-            return res.render("auth/login", error);
-        };
+        if (foundUser) { throw "userExists" };
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(req.body.password, salt);
         req.body.password = hash;
@@ -77,6 +73,12 @@ const signupPost = async function (req, res, next) {
         };
         return res.redirect(`/profile/${newUser._id}`);
     } catch (error){
+        if (error === "userExists") {
+            const error = {
+                message: "An account with this username or email already exists. Please log in instead."
+            }
+            return res.render("auth/login", {error});
+        }
         console.log(error);
         req.error = error;
         return next();

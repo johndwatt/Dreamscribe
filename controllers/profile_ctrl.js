@@ -68,18 +68,20 @@ const profileUpdate = async function (req, res, next) {
         const checkUsername = await User.exists({ username: req.body.username });
         const checkEmail = await User.exists({ email: req.body.email });
         if (checkUsername === true && foundUser.username !== req.body.username) {
-            error = {
-                message: "This username is already in use. You cannot update your profile to have the same username as another account.",
+            const context = {
                 userToEdit: foundUser,
+                error: {
+                    message: "This username is already in use. You cannot update your profile to have the same username as another account." }
             }
-            return res.render("user/edit", error);
+            return res.render("user/edit", context);
         };
         if (checkEmail === true && foundUser.email !== req.body.email) {
-            error = {
-                message: "This username is already in use. You cannot update your profile to have the same username as another account.",
+            const context = {
                 userToEdit: foundUser,
+                error: {
+                    message: "This username is already in use. You cannot update your profile to have the same username as another account." }
             }
-            return res.render("user/edit", error);
+            return res.render("user/edit", context);
         };
         const updatedUser = await User.findByIdAndUpdate(
             req.params.id,
