@@ -117,6 +117,7 @@ a {
     }
     .journal__title {
         padding: 5px 0px;
+        font-size: 24px;
     }
     .journal__flex__user {
         padding: 5px 0px;
@@ -202,6 +203,7 @@ a {
     }
 }
 
+/* Misc  */
 .hidden {
     display: none;
 }
@@ -219,6 +221,13 @@ article#show__journal {
     margin-top: 10px;
 }
 
+article.journal h4.journal__title,
+article.journal a.journal__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Media Queries */
 @media only screen and (min-width: 480px){
     .center__elements {
         display: flex;

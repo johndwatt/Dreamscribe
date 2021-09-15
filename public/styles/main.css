@@ -1,38 +1,3 @@
-/* 
-current color scheme:
-$item-color: #132F64;
-$background-color: #071022;
-$hover-color: #F1EEFF;
-$font-color: #F1EEFF;
-$shadow-rgba: rgba(241, 238, 255, 0.2);
-
-saved, but not used
-
-
-$hover-color: #FFED24;
-$font-color: #DBC65E;
-
-$font-color: #F7D219;
-$hover-color: #FFED24;
-
-$hover-color: #9895CC;
-$font-color: #CBE7FA; 
-
-$item-color: #140F75;
-
-$item-color: #484C6B;
-$background-color: #403C8C;
-
-$item-color: #132F64;
-$hover-color: #dac97fdd;
-$font-color: #fcf070;
-$background-color: #071022;
-
-283B8F
-
-132F64
-
-#33364D*/
 /* sass --watch sass/src/main.scss:public/styles/main.css */
 * {
   margin: 0;
@@ -150,6 +115,7 @@ a:hover {
 }
 .journal .journal__title {
   padding: 5px 0px;
+  font-size: 24px;
 }
 .journal .journal__flex__user {
   padding: 5px 0px;
@@ -236,6 +202,7 @@ a:hover {
   border: 2px solid #F1EEFF;
 }
 
+/* Misc  */
 .hidden {
   display: none;
 }
@@ -253,6 +220,13 @@ article#show__journal {
   margin-top: 10px;
 }
 
+article.journal h4.journal__title,
+article.journal a.journal__title {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+/* Media Queries */
 @media only screen and (min-width: 480px) {
   .center__elements {
     display: flex;

@@ -1,38 +1,3 @@
-/* 
-current color scheme:
-$item-color: #132F64;
-$background-color: #071022;
-$hover-color: #F1EEFF;
-$font-color: #F1EEFF;
-$shadow-rgba: rgba(241, 238, 255, 0.2);
-
-saved, but not used
-
-
-$hover-color: #FFED24;
-$font-color: #DBC65E;
-
-$font-color: #F7D219;
-$hover-color: #FFED24;
-
-$hover-color: #9895CC;
-$font-color: #CBE7FA; 
-
-$item-color: #140F75;
-
-$item-color: #484C6B;
-$background-color: #403C8C;
-
-$item-color: #132F64;
-$hover-color: #dac97fdd;
-$font-color: #fcf070;
-$background-color: #071022;
-
-283B8F
-
-132F64
-
-#33364D*/
 /* profile */
 .profile__section {
   text-align: center;
@@ -103,6 +68,10 @@ $background-color: #071022;
   color: #132F64;
   border-color: #132F64;
   background-color: #FF7B7B;
+}
+
+#show__journal:hover {
+  transform: scale(1);
 }
 
 /*# sourceMappingURL=journal.css.map */
