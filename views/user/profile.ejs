@@ -44,9 +44,10 @@
             <section class="journal__grid">
                 <% for(let i = 0; i < userJournals.length; i++){ %> 
                     <% const journal = userJournals[i] %>
-                    <% if (user.id === thisUser.id && journal.isPublic === false) { %> 
+                    <% if (user.id === thisUser.id && journal.isPublic === false) { %>
+                    <a href='/journals/<%= journal.id %>'>
                         <article class="journal">
-                            <h4><a href='/journals/<%= journal.id %>' class="journal__title"><%= journal.title %></a></h4>
+                            <h4><%= journal.title %></h4>
                             <div class="journal__flex">
                                 <div class="journal__flex__user">
                                     <img class="image journal__user__img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
@@ -61,11 +62,12 @@
                                 <p class="space-top">Posted: <%= journal.createdAt.toLocaleString() %></p>
                                 <p class="space-top">Status: Private</p>
                             </div>
-                            
                         </article>
+                    </a>
                     <% } else if (journal.isPublic === true) { %>
+                    <a href='/journals/<%= journal.id %>'>
                         <article class="journal">
-                            <h4><a href='/journals/<%= journal.id %>' class="journal__title"><%= journal.title %></a></h4>
+                            <h4><%= journal.title %></h4>
                             <div class="journal__flex">
                                 <div class="journal__flex__user">
                                     <img class="image journal__user__img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
@@ -81,6 +83,7 @@
                                 <p class="space-top">Status: Public</p>
                             </div>
                         </article>
+                    </a>
                     <% } %>
                 <% } %> 
             </section>

@@ -30,12 +30,13 @@
         <main class="journal__grid">
                 <% for(let i = 0; i < journals.length; i++){ %> 
                 <% const journal = journals[i] %>
+                <a href='/journals/<%= journal.id %>'>
                     <article class="journal">
-                        <h4 class="journal__title"><a href='/journals/<%= journal.id %>'><%= journal.title %></a></h4>
+                        <h4 class="journal__title"><%= journal.title %></h4>
                         <div class="journal__flex">
                             <div class="journal__flex__user">
                                 <img class="image journal__user__img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
-                                <p class="space"><a href='/profile/<%= journal.userId.id %>'><%= journal.userId.username %></a></p>
+                                <p class="space"><%= journal.userId.username %></p>
                             </div>
                             <div class="journal__flex__content">
                                 <p><%= journal.content %></p>
@@ -44,6 +45,7 @@
                         <hr class="space-top"/>
                         <p class="space-top">Posted: <%= journal.createdAt.toLocaleString() %></p> 
                     </article>
+                </a>
                 <% } %>
         </main>
     </div>
