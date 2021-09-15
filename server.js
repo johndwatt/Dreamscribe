@@ -20,7 +20,7 @@ dotenv.config();
 // Middleware
 app.use(
     session({
-        store: MongoStore.create({ mongoUrl: "mongodb://localhost:27017/dreamscribe" }),
+        store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI || "mongodb://localhost:27017/dreamscribe" }),
         secret: process.env.SECRET,
         resave: false,
         saveUninitialized: false,

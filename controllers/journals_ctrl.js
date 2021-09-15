@@ -3,11 +3,35 @@ const { Journal } = require("../models")
 //index
 const indexRoute = async function (req, res, next) {
     try {
-        const publicJournals = await Journal.find({ isPublic: true }).populate('userId');
-        const context = {
-            journals: publicJournals,
-        };
-        return res.render("journal/index", context)
+        if (req.query.search) {
+            query = {
+                $or: [
+                {
+                    title: {
+                        $regex: new RegExp(req.query.search),
+                        $options: "i",
+                    },
+                },
+                {
+                    content: {
+                        $regex: new RegExp(req.query.search),
+                        $options: "i",
+                    },
+                }],
+            };
+            /* `${req.query.search}` */
+            const searchJournals = await Journal.find({ isPublic: true }).find(query).populate('userId title content createdAt').sort('-createdAt');
+            const context = {
+                journals: searchJournals,
+            };
+            return res.render("journal/index", context);
+        } else {
+            const publicJournals = await Journal.find({ isPublic: true }).populate('userId').sort('-createdAt');
+            const context = {
+                journals: publicJournals,
+            };
+            return res.render("journal/index", context);
+        }
     } catch (error){
         console.log(error);
         req.error = error;
@@ -62,6 +86,9 @@ const showRoute = async function (req, res, next) {
 const editRoute = async function (req, res, next) {
     try {
         const foundJournal = await Journal.findById(req.params.id);
+        if (req.session.currentUser.id != foundJournal.userId._id) {
+            return res.redirect("/journals/you-are-not-authorized-to-edit-that-but-nice-try");
+        }
         const context = {
             journal: foundJournal,
             publicValue: foundJournal.isPublic,

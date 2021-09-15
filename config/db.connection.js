@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require("dotenv").config();
 
-const connectionStr = 'mongodb://localhost:27017/dreamscribe'
+const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/dreamscribe'
 
 mongoose.connect(connectionStr);
 

@@ -11,12 +11,12 @@
             <section class="section profile__section">
                 <h3>Profile</h3>
                 <div>
-                    <img class="image" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
+                    <img class="image" src="<%= thisUser.avatar %>" alt="profile-photo">
                 </div>
                 <p class="username"><%= thisUser.username %></p>
                 <p>Join Date: <%= thisUser.joinDate.toLocaleDateString() %> %></p>
                 <% if (user.id === thisUser.id) { %> 
-                    <a href="/home"><button class="button">Update profile</button></a>
+                    <a href="/profile/<%= thisUser.id %>/edit"><button class="button">Update profile</button></a>
                 <% } %> 
             </section>
             <section class="section">
@@ -24,29 +24,32 @@
                 <div class="flex__elements">
                     <div class="section__flex">
                         <div class="search">
-                            <div>
-                                <input name="search" class="input"/>
-                                <button type="submit" class="button">Search</button>
-                            </div>
+                            <form class="search__flex">
+                                <input name="search" class="input" type="search" placeholder="Search" />
+                                <div class="search__buttons">
+                                    <button type="submit" class="button">Search</button>
+                                    <a class="button" href="/profile/<%= thisUser.id %>" >Reset</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="new__button">
-                        <a href="/journals/new" class="button">New Journal Entry</a>
+                        <a href="/journals/new" class="button space-top">New Journal Entry</a>
                     </div>
                 </div>
-                
             </section>
         </header>
         <main>
             <section class="journal__grid">
                 <% for(let i = 0; i < userJournals.length; i++){ %> 
                     <% const journal = userJournals[i] %>
-                    <% if (user.id === thisUser.id && journal.isPublic === false) { %> 
+                    <% if (user.id === thisUser.id && journal.isPublic === false) { %>
+                    <a href='/journals/<%= journal.id %>'>
                         <article class="journal">
-                            <h4><a href='/journals/<%= journal.id %>' class="journal__title"><%= journal.title %></a></h4>
+                            <h4><%= journal.title %></h4>
                             <div class="journal__flex">
                                 <div class="journal__flex__user">
-                                    <img class="image journal__user__img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
+                                    <img class="image journal__user__img" src="<%= thisUser.avatar %>">
                                     <p class="space"><%= thisUser.username %></p>
                                 </div>
                                 <div class="journal__flex__content">
@@ -55,17 +58,18 @@
                             </div>
                             <hr class="space-top"/>
                             <div class="journal__footer">
-                                <p class="space-top">Posted: <%= journal.createdAt.toLocaleDateString() %> at <%= journal.createdAt.toLocaleTimeString() %></p>
+                                <p class="space-top">Posted: <%= journal.createdAt.toLocaleString() %></p>
                                 <p class="space-top">Status: Private</p>
                             </div>
-                            
                         </article>
+                    </a>
                     <% } else if (journal.isPublic === true) { %>
+                    <a href='/journals/<%= journal.id %>'>
                         <article class="journal">
-                            <h4><a href='/journals/<%= journal.id %>' class="journal__title"><%= journal.title %></a></h4>
+                            <h4><%= journal.title %></h4>
                             <div class="journal__flex">
                                 <div class="journal__flex__user">
-                                    <img class="image journal__user__img" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile-photo">
+                                    <img class="image journal__user__img" src="<%= thisUser.avatar %>" alt="profile-photo">
                                     <p class="space"><%= thisUser.username %></p>
                                 </div>
                                 <div class="journal__flex__content">
@@ -74,10 +78,11 @@
                             </div>
                             <hr class="space-top"/>
                             <div class="journal__footer">
-                                <p class="space-top">Posted: <%= journal.createdAt.toLocaleDateString() %> at <%= journal.createdAt.toLocaleTimeString() %></p>
+                                <p class="space-top">Posted: <%= journal.createdAt.toLocaleString() %></p>
                                 <p class="space-top">Status: Public</p>
                             </div>
                         </article>
+                    </a>
                     <% } %>
                 <% } %> 
             </section>
