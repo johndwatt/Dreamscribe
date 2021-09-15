@@ -33,6 +33,7 @@ $background-color: #071022;
 132F64
 
 #33364D*/
+/* sass --watch sass/src/main.scss:public/styles/main.css */
 * {
   margin: 0;
   padding: 0;
