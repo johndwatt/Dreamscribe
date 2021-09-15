@@ -89,7 +89,6 @@ const editRoute = async function (req, res, next) {
         if (req.session.currentUser.id != foundJournal.userId._id) {
             return res.redirect("/journals/you-are-not-authorized-to-edit-that-but-nice-try");
         }
-        
         const context = {
             journal: foundJournal,
             publicValue: foundJournal.isPublic,

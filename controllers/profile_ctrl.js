@@ -79,7 +79,7 @@ const profileUpdate = async function (req, res, next) {
             const context = {
                 userToEdit: foundUser,
                 error: {
-                    message: "This username is already in use. You cannot update your profile to have the same username as another account." }
+                    message: "This email is already in use. You cannot update your profile to have the same email as another account." }
             }
             return res.render("user/edit", context);
         };
