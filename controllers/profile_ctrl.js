@@ -46,6 +46,9 @@ const profileRoute = async function (req, res, next){
 //edit
 const profileEdit = async function (req, res, next) {
     try {
+        if (req.session.currentUser.id !== req.params.id) {
+            return res.redirect("/profile/you-are-not-authorized-to-edit-that-but-nice-try");
+        }
         const foundUser = await User.findById({ _id: req.params.id });
         const context = {
             userToEdit: foundUser,
