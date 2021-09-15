@@ -16,7 +16,7 @@
                 <p class="username"><%= thisUser.username %></p>
                 <p>Join Date: <%= thisUser.joinDate.toLocaleDateString() %> %></p>
                 <% if (user.id === thisUser.id) { %> 
-                    <a href="/home"><button class="button">Update profile</button></a>
+                    <a href="/profile/<%= thisUser.id %>/edit"><button class="button">Update profile</button></a>
                 <% } %> 
             </section>
             <section class="section">
