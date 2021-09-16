@@ -121,6 +121,9 @@ const updateRoute = async function (req, res, next) {
 const deleteShow = async function (req, res, next) {
     try {
         const foundJournal = await Journal.findById(req.params.id);
+        if (req.session.currentUser.id != foundJournal.userId._id) {
+            return res.redirect("/journals/you-are-not-authorized-to-delete-that-but-nice-try");
+        }
         const context = {
             journal: foundJournal,
         };

@@ -14,11 +14,6 @@
   margin-bottom: 12px;
   display: flex;
   align-items: center;
-  height: 200px;
-  width: 200px;
-  overflow: hidden;
-  border: 3px solid #F1EEFF;
-  border-radius: 150px;
 }
 .profile__section a {
   margin-top: 12px;
@@ -29,6 +24,9 @@
 .profile__section .username {
   font-size: 20px;
   padding: 5px;
+}
+.profile__section .image__container--big {
+  align-self: center;
 }
 
 .journal__flex__user .space {

@@ -10,7 +10,7 @@
         <header>
             <section class="section profile__section">
                 <h3>Profile</h3>
-                <div>
+                <div class="image__container--big">
                     <img class="image" src="<%= thisUser.avatar %>" alt="profile-photo">
                 </div>
                 <p class="username"><%= thisUser.username %></p>
@@ -49,7 +49,9 @@
                             <h4><%= journal.title %></h4>
                             <div class="journal__flex">
                                 <div class="journal__flex__user">
-                                    <img class="image journal__user__img" src="<%= thisUser.avatar %>">
+                                    <div class="image__container--icon space-top">
+                                        <img class="image journal__user__img" src="<%= thisUser.avatar %>" alt="user-avatar">
+                                    </div>
                                     <p class="space"><%= thisUser.username %></p>
                                 </div>
                                 <div class="journal__flex__content">
@@ -69,7 +71,9 @@
                             <h4><%= journal.title %></h4>
                             <div class="journal__flex">
                                 <div class="journal__flex__user">
-                                    <img class="image journal__user__img" src="<%= thisUser.avatar %>" alt="profile-photo">
+                                    <div class="image__container--icon space-top">
+                                        <img class="image journal__user__img" src="<%= thisUser.avatar %>" alt="user-avatar">
+                                    </div>
                                     <p class="space"><%= thisUser.username %></p>
                                 </div>
                                 <div class="journal__flex__content">
