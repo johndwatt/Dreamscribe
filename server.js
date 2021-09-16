@@ -6,9 +6,6 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const dotenv = require("dotenv");
 
-// Internal Modules
-
-
 // Instanced Modules
 const app = express();
 
