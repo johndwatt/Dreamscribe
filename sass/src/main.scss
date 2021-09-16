@@ -18,7 +18,7 @@ p {
 }
 
 h3, h4 {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 a {
@@ -77,6 +77,28 @@ a {
     margin: 0 auto;
 }
 
+.image__container--big {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    border: 3px solid $font-color;
+    border-radius: 250px;
+    margin-bottom: 10px;
+}
+
+.image__container--icon {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+    border: 3px solid $font-color;
+    border-radius: 250px;
+    margin-bottom: 10px;
+}
+
 .input {
     padding: 5px;
     margin-top: 3px;
@@ -132,11 +154,7 @@ a {
         padding: 5px 0px;
     }
     .journal__user__img {
-        height: 80px;
-        width: 80px;
         overflow: hidden;
-        border: 3px solid $font-color;
-        border-radius: 150px;
     }
     &:hover {
         box-shadow: 0 8px 16px 0 $shadow-rgba;
@@ -315,6 +333,9 @@ article.journal .journal__title {
 @media only screen and (min-width: 960px){
     div#welcome__links {
         flex-direction: row;
+    }
+    section#welcome {
+        max-width: 700px; 
     }
     section#home__top {
         max-height: 400px;

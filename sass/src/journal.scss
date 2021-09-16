@@ -15,11 +15,6 @@
         margin-bottom: 12px;
         display: flex;
         align-items: center;
-        height: 200px;
-        width: 200px;
-        overflow: hidden;
-        border: 3px solid $font-color;
-        border-radius: 150px;
     }
     a {
         margin-top: 12px;
@@ -30,6 +25,9 @@
     .username {
         font-size: 20px;
         padding: 5px;
+    }
+    .image__container--big {
+        align-self: center;
     }
 }
 
