@@ -12,7 +12,7 @@ const commentSchema = new mongoose.Schema(
         },
         journalId: {
             type: mongoose.Types.ObjectId,
-            ref: "Comment",
+            ref: "Journal",
         },
         userId: {
             type: mongoose.Types.ObjectId,
