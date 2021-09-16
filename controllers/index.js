@@ -3,4 +3,5 @@ module.exports = {
     auth_ctrl: require("./auth_ctrl"),
     info_ctrl: require("./info_ctrl"),
     profile_ctrl: require("./profile_ctrl"),
+    comments_ctrl: require("./comments_ctrl"),
 }

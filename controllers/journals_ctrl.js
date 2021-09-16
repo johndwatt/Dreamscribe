@@ -1,4 +1,4 @@
-const { Journal } = require("../models")
+const { Journal, Comment } = require("../models")
 
 //index
 const indexRoute = async function (req, res, next) {
@@ -70,8 +70,10 @@ const createRoute = async function (req, res, next) {
 const showRoute = async function (req, res, next) {
     try {
         const foundJournal = await Journal.findById(req.params.id).populate('userId');
+        const allComments = await Comment.find({ journal: req.params.id }).populate('userId');
         const context = {
             journal: foundJournal,
+            comments: allComments,
         };
         return res.render("journal/show", context)
     } catch (error){

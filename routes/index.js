@@ -3,4 +3,5 @@ module.exports = {
     auth: require("./auth"),
     info: require("./info"),
     profile: require("./profile"),
+    comments: require("./comments"),
 }

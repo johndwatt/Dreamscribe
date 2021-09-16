@@ -3,6 +3,7 @@
 <head>
     <%- include('../partials/_head') %>
     <link rel="stylesheet" href="/styles/journal.css" />
+    <link rel="stylesheet" href="/styles/forms.css" />
 </head>
 <body>
         <%- include('../partials/_navbar') %>
@@ -29,7 +30,56 @@
                 <a href="/journals/<%= journal.id %>/edit" class="button">Update</a>
                 <a href="/journals/<%= journal.id %>/delete" class="button delete__button">Delete</a>
             </section>
-        <% } %> 
+        <% } %>
+        
+        <section class="comments__flex">
+            <section class="section">
+                <h3>Comments</h3>
+                <form class="form" action="/journals/<%= journal.id %>" method="POST">
+                <% if (typeof error !== "undefined") { %>
+                    <p class="form__error"><%= error.message %></p> 
+                <% } %>
+                <div class="form__field">
+                    <label>Content:</label>
+                    <textarea
+                    rows="5"
+                    cols="50"
+                    class="input" 
+                    name="content"
+                    placeholder="Comment on this journal entry..."
+                    required></textarea>
+                </div> 
+                <div class="form__field">
+                    <button class="button success__button" type="submit">Post comment</button>
+                    <a href="/journals" class="button cancel__button">Cancel</a>
+                </div> 
+            </form>
+            </section>
+            <section class="flex__elements">
+                <% for(let i = 0; i < comments.length; i++){ %> 
+                    <% const comment = comments[i] %>
+                    <article class="journal comment">
+                        <h3 class="space"><a href="/profile/<%= comment.userId.id %> "><%= comment.userId.username %></a> commented:</h3>
+                        <div class="journal__flex">
+                            <div class="journal__flex__content">
+                                <p><%= comment.content %></p>
+                            </div>
+                        </div>
+                        <hr class="space-top"/>
+                        <p class="space-top">Posted: <%= comment.createdAt.toLocaleString() %></p>
+                        <% if (user.id == comment.userId.id) { %> 
+                            <section class="btns__flex space-top">
+                                <a href="/journals/<%= comment.journalId.id %>/comment/<%= comment.id %>/edit" class="button">Update</a>
+                                <a href="/journals/<%= comment.journalId.id %>/comment/<%= comment.id %>/delete" class="button delete__button">Delete</a>
+                            </section>
+                        <% } %>
+                    </article>
+                <% } %>
+            </section>
+            <!-- comment loop -->
+
+
+        </section> 
     </main>
 </body>
 </html>

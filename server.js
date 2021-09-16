@@ -47,6 +47,7 @@ app.use("/", routes.auth);
 app.use("/", routes.info);
 app.use("/", authRequired, routes.profile);
 app.use("/journals", authRequired, routes.journals);
+app.use("/journals", authRequired, routes.comments);
 
 // Routes
 app.get("/", function (req, res, next) {

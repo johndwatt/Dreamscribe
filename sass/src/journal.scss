@@ -74,6 +74,12 @@
     }
 }
 
+.comment__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #show__journal:hover {
     transform: scale(1.0);
 }
