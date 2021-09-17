@@ -5,12 +5,14 @@
 
 === Overall Concept === 
 
-A repository for lucid dreamers to journal their dreams, where they can access resources and interact with other lucid dreamers. The dream entries are private by default, but can be made public and shared on the main feed (organized by newest date).
+Do you have vivid dreams at night? Do you every have the urge to write down your dreams so you can remember them later? Are you a lucid dreamer, or would like to begin a practice of lucid dreaming? Welcome to Dreamscribe, a repository for individuals to journal their dreams and access resources for lucid dreaming techniques. The dream entries are private by default, but can be made public and shared on the main feed. Sign up and start recording your dreams today with Dreamscribe!
 
 
 === Link to site ===
 
-COMING SOON
+You can access Dreamscribe and begin recording your dreams here:
+
+https://dreamscribe.herokuapp.com/ 
 
 
 === Main Technologies ===
@@ -27,7 +29,17 @@ COMING SOON
 
 === Pictures of Site ===
 
-COMING SOON
+![mvp-login](./readme-images/login.png)
+
+![mvp-home](./readme-images/home.png)
+
+![mvp-profile](./readme-images/profile.png)
+
+![mvp-feed](./readme-images/journal-feed.png)
+
+![mvp-mobile](./readme-images/responsive-mobile-view.png)
+
+![mvp-update](./readme-images/update-form.png)
 
 
 === DEVELOPMENT ROADMAP ===
@@ -35,16 +47,77 @@ COMING SOON
 === Sprints ===
 
 SPRINT 1: Set-up
-- Set up server
-- Set up folder structure
-- Set up logger and other useful middleware
-- Outline journal entry routes + verify they work w/ res.send()
-- Outline user auth routes + verify functionality
+- Set up server - DONE
+- Set up folder structure - DONE
+- Set up logger and other useful middleware - DONE
+- Outline journal entry routes + verify they work w/ res.send() - DONE
+- Outline user auth routes + verify functionality - DONE
+
+SPRINT 2: Templates
+- Create template outlines for all pages: - DONE
+- Connect these show pages to routes - DONE
+- Create and replace repetitive code with EJS partials -DONE
+- Set up SASS - DONE
+- Add basic styling necessary for core functionality - DONE
+- Add needed event listeners for Navbar, etc. - DONE
+
+SPRINT 3: Database
+- Set up MongoDB connection w/ mongoose - DONE
+- Create and outline models  - DONE
+
+SPRINT 4: Full CRUD 
+- Fill in route outlines for journal entries to have full CRUD - DONE
+- Update forms in templates to have CRUD work for journal entries - DONE
+
+SPRINT 5: User Auth
+- Fill in route outlines for auth - DONE
+- Update forms in templates to have working auth - DONE
+- Make login required for certain functionality, including: - DONE
+- Viewing profiles - DONE
+- Creating, updating, or deleting comments/posts - DONE
+- Making CRUD only work for own posts -DONE
+
+SPRINT 6: Error Handling/Bugs 
+- Extensive checking to make sure all errors are handled properly and display on the page - DONE
+- Add data validation to ensure auth functions properly - DONE
+- Iron out any bugs in functionality - DONE
+
+SPRINT 7: Level Up Styling 
+- Finish up any padding, margin, or spacing issues -  DONE
+- Finish up any DOM manipulation - DONE
+- Make navbar dynamic - DONE
+- Add color scheme + color variables - DONE
+- Add appropriate font - DONE
+- Add appropriate images - DONE
+- Add animations/transitions/hover effects - DONE
+- Round out styling with minor changes to border radius, shadow, or any other nice looking things - DONE
+
+SPRINT 8: Refactor code
+- Refactor public files - DONE
+- Refactor backend files - DONE
+- Remove unnecessary files - DONE
+- Remove all code that is not production ready - DONE
+
+SPRINT 9: Deployment  
+- Setup MongoDB atlas and connect to site - DONE
+- Deploy to Heroku - DONE
 
 
-=== Stretch goals ===
-
-
+=== Future Goals ===
+- Comments so users can interact with one another - In Progress
+- Captcha on signup to avoid spam account
+- Refactor pages for update/delete to modals
+- Auto-mod to prevent unnecessary hostile language appearing in posts/spam
+- Admin privileges that can be granted to certain users so they can mod website
+- Profile settings page with options for users to change how their information is displayed or delete their profile
+- Lucid dreaming challenge generator that users can refresh
+- Badges for completing challenges that are displayed on profile
+- File upload system so users can upload their dreams or pictures of their dreams
+- Some system for allowing the file upload system to not be abused
+- The ability for users to mark a journal entry as explicit so it is blurred and can only be accessed if logged in and clicked on
+- Another feed using the same create/update/destroy routes, but is for questions about lucid dreaming - add Q and A feed
+- Add the ability for users to add resources to the resources page
+- The ability to dictate dreams with voice to text
 
 
 === PLANNING MATERIALS ===
@@ -63,16 +136,29 @@ The journal feed page has all public dream journal entries. Like the profile pag
 
 The journal show page has the journal entry at the top of the page and all comments for that journal entry beneath it. The user has buttons to select whether to update the entry, delete the entry, or make it public.
 
-Selecting a create or update button brings the user to one of the forms to create or update the post or comment. Update pages have the users information saved so it is easily updatable. 
+Selecting a create or update button brings the user to one of the forms to create or update the journal entry. Update pages have the users information saved so it is easily updatable. 
 
 Clicking the logout button in the navbar will log the user out and return them to the homepage. 
 
 
 === ERD ===
 
-COMING SOON
+![mvp-erd](./readme-images/erd.png)
+
+
+=== USER FLOW DIAGRAM ===
+
+![mvp-userflow](./readme-images/Userflow.png)
 
 
 === WireFrames ===
 
-COMING SOON
+![mvp-wireframe](./readme-images/login-wf.jpg)
+
+![mvp-wireframe](./readme-images/home-wf.jpg)
+
+![mvp-wireframe](./readme-images/journal-wf.jpg)
+
+![mvp-wireframe](./readme-images/show-wf.jpg)
+
+![mvp-wireframe](./readme-images/profile-wf.jpg)
