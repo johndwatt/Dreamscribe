@@ -21,7 +21,7 @@ To install this application on your local machine, fork and clone down the repo.
 
 You will need node.js to run this application on your local machine. Run "npm install" to download all dependencies for the application.
 
-Once all dependencies are downloaded, you should be able to spin up the applciation with "node server.js". 
+Once all dependencies are downloaded, you should be able to spin up the application with "node server.js". 
 
 
 === Main Technologies ===
