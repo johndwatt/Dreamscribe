@@ -19,7 +19,6 @@ const indexRoute = async function (req, res, next) {
                     },
                 }],
             };
-            /* `${req.query.search}` */
             const searchJournals = await Journal.find({ isPublic: true }).find(query).populate('userId title content createdAt').sort('-createdAt');
             const context = {
                 journals: searchJournals,
