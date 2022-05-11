@@ -1,10 +1,5 @@
 # Dreamscribe
 
-=== UPDATE Jan 20 2022 ===
-
-Dreamscribe is currently being refactored to a React Front-end. You can find the code for the Front End [here](https://github.com/johndwatt/Dreamscribe-React-Refactor). Stay tuned for future updates and changes. 
-
-
 === OVERVIEW ===
 
 === Overall Concept === 
